@@ -26,8 +26,8 @@ Color Palette: #322D29, #72383D, #AC9C8D, #D1C7BD, #D9D9D9, #EFE9E1
     --secondary: 29 17% 61%;
     --secondary-foreground: 27 10% 18%;
 
-    --muted: 0 0% 85%;
-    --muted-foreground: 27 10% 35%;
+    --muted: 240 11% 36%;
+    --muted-foreground: 34 33% 91%;
 
     --accent: 30 19% 78%;
     --accent-foreground: 27 10% 18%;
@@ -35,8 +35,8 @@ Color Palette: #322D29, #72383D, #AC9C8D, #D1C7BD, #D9D9D9, #EFE9E1
     --destructive: 0 72% 50%;
     --destructive-foreground: 0 85% 97%;
 
-    --border: 0 0% 85%;
-    --input: 0 0% 85%;
+    --border: 240 11% 36%;
+    --input: 240 11% 36%;
     --ring: 355 34% 33%;
 
     --radius: 0.5rem;
@@ -47,13 +47,13 @@ Color Palette: #322D29, #72383D, #AC9C8D, #D1C7BD, #D9D9D9, #EFE9E1
     --sidebar-primary-foreground: 34 33% 91%;
     --sidebar-accent: 29 17% 61%;
     --sidebar-accent-foreground: 27 10% 18%;
-    --sidebar-border: 0 0% 85%;
+    --sidebar-border: 240 11% 36%;
     --sidebar-ring: 355 34% 33%;
 
     --chart-1: 355 34% 33%;
     --chart-2: 29 17% 61%;
     --chart-3: 30 19% 78%;
-    --chart-4: 0 0% 85%;
+    --chart-4: 240 11% 36%;
     --chart-5: 27 10% 18%;
 
     --sidebar: 34 33% 91%;
@@ -115,7 +115,7 @@ Color Palette: #322D29, #72383D, #AC9C8D, #D1C7BD, #D9D9D9, #EFE9E1
     
     --chart-1: 30 19% 78%;
     --chart-2: 29 17% 61%;
-    --chart-3: 0 0% 85%;
+    --chart-3: 240 11% 36%;
     --chart-4: 355 34% 33%;
     --chart-5: 34 33% 91%;
     
