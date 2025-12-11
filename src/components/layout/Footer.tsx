@@ -80,7 +80,7 @@ const Footer = () => {
               <li className="flex items-center gap-3">
                 <Mail className="h-5 w-5 shrink-0" />
                 <a href="mailto:info@valorbuildcom.com" className="opacity-80 hover:opacity-100">
-                  info@valorbuildcom.com
+                  info@valorbuildcon.com
                 </a>
               </li>
               <li className="flex items-center gap-3">
