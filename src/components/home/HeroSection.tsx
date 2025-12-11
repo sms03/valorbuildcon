@@ -2,11 +2,17 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-construction.jpg";
+
 const HeroSection = () => {
-  return <section className="relative min-h-[90vh] flex items-center">
+  return (
+    <section className="relative min-h-[90vh] flex items-center">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
-        <img src={heroImage} alt="Construction site aerial view" className="w-full h-full object-cover" />
+        <img 
+          src={heroImage} 
+          alt="Construction site aerial view" 
+          className="w-full h-full object-cover"
+        />
         <div className="absolute inset-0 bg-gradient-to-r from-foreground/90 via-foreground/70 to-foreground/90" />
       </div>
 
@@ -67,13 +73,15 @@ const HeroSection = () => {
             <p className="font-semibold">Contact us today for a free consultation</p>
           </div>
           <Button asChild variant="outline" size="lg" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
-            <a href="tel:+919876543210" className="text-primary">
+            <a href="tel:+919876543210">
               <Phone className="mr-2 h-5 w-5" />
               +91 98765 43210
             </a>
           </Button>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default HeroSection;
