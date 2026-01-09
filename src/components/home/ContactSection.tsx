@@ -168,7 +168,7 @@ const ContactSection = () => {
         {/* Google Map */}
         <div className="mt-12 overflow-hidden rounded-lg border border-border">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.904203827489!2d72.55426807596893!3d23.027616979170045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e84ffc0000001%3A0x1a0e4b8b8b8b8b8b!2sIndustrial%20Area%2C%20Ahmedabad%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1699999999999!5m2!1sen!2sin"
+            src="https://www.google.com/maps?q=18.619755,73.730238&z=17&output=embed"
             width="100%"
             height="400"
             style={{ border: 0 }}
