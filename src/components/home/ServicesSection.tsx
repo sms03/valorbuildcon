@@ -44,7 +44,7 @@ const ServicesSection = () => {
               />
               <div className="absolute inset-0 bg-foreground/40" />
               <div className="absolute inset-0 flex items-center justify-center">
-                <h3 className="text-3xl font-bold text-background">RCC Work</h3>
+                <h3 className="text-3xl font-bold text-background">Civil Work</h3>
               </div>
             </div>
             <div className="p-8">
