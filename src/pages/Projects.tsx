@@ -45,7 +45,12 @@ const projectFocus = [
 const Projects = () => {
   return (
     <Layout>
-      <section className="bg-muted/20 border-b border-border">
+      <section
+        className="bg-muted/20 border-b border-border"
+        data-animate="fade-up"
+        data-animate-duration="1"
+        data-animate-delay="0.1"
+      >
         <div className="container py-16 md:py-20 text-center space-y-6">
           <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium rounded">
             PROJECT SHOWCASE
@@ -61,9 +66,19 @@ const Projects = () => {
       </section>
 
       <section className="container py-16 grid gap-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div
+          className="grid grid-cols-1 md:grid-cols-3 gap-6"
+          data-animate="fade-up"
+          data-animate-delay="0.15"
+          data-animate-targets="[data-stat-card]"
+          data-animate-stagger="0.12"
+        >
           {stats.map(({ value, label, description }) => (
-            <div key={label} className="bg-card border border-border rounded-2xl p-6 shadow-sm space-y-3">
+            <div
+              key={label}
+              className="bg-card border border-border rounded-2xl p-6 shadow-sm space-y-3"
+              data-stat-card
+            >
               <p className="text-4xl font-semibold text-primary">{value}</p>
               <h3 className="text-lg font-medium text-foreground">{label}</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">{description}</p>
@@ -71,9 +86,19 @@ const Projects = () => {
           ))}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div
+          className="grid grid-cols-1 md:grid-cols-3 gap-6"
+          data-animate="fade-up"
+          data-animate-delay="0.25"
+          data-animate-targets="[data-focus-card]"
+          data-animate-stagger="0.12"
+        >
           {projectFocus.map(({ title, description, icon: Icon }) => (
-            <div key={title} className="bg-background border border-border rounded-2xl p-6 flex flex-col gap-4">
+            <div
+              key={title}
+              className="bg-background border border-border rounded-2xl p-6 flex flex-col gap-4"
+              data-focus-card
+            >
               <div className="h-12 w-12 rounded-full bg-primary/10 text-primary flex items-center justify-center">
                 <Icon className="h-6 w-6" />
               </div>
@@ -90,7 +115,12 @@ const Projects = () => {
 
       <ProjectsSection />
 
-      <section className="container pb-20">
+      <section
+        className="container pb-20"
+        data-animate="scale"
+        data-animate-duration="1"
+        data-animate-delay="0.2"
+      >
         <div className="bg-primary text-primary-foreground rounded-3xl p-10 md:p-14 flex flex-col gap-6">
           <div className="space-y-3">
             <p className="text-sm font-semibold tracking-wide uppercase text-primary-foreground/80">Ready to collaborate?</p>
