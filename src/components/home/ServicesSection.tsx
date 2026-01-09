@@ -18,9 +18,13 @@ const ServicesSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-muted/30">
+    <section
+      className="py-20 bg-muted/30"
+      data-animate="fade-up"
+      data-animate-duration="0.9"
+    >
       <div className="container">
-        <div className="text-center mb-12">
+        <div className="text-center mb-12" data-animate="fade-up" data-animate-delay="0.1">
           <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 rounded">
             OUR SERVICES
           </div>
@@ -35,7 +39,11 @@ const ServicesSection = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* RCC Work Card */}
-          <div className="bg-card border border-border overflow-hidden group rounded-lg">
+          <div
+            className="bg-card border border-border overflow-hidden group rounded-lg"
+            data-animate="fade-up"
+            data-animate-delay="0.15"
+          >
             <div className="relative h-64 overflow-hidden">
               <img 
                 src={rccImage} 
@@ -54,8 +62,13 @@ const ServicesSection = () => {
                 follow strict quality protocols.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
-                {rccServices.map((service) => (
-                  <div key={service.title} className="text-center p-4 bg-muted/50 rounded-md">
+                {rccServices.map((service, index) => (
+                  <div
+                    key={service.title}
+                    className="text-center p-4 bg-muted/50 rounded-md"
+                    data-animate="fade-up"
+                    data-animate-delay={`${0.25 + index * 0.05}`}
+                  >
                     <service.icon className="h-8 w-8 text-secondary mx-auto mb-2" />
                     <h4 className="font-medium text-foreground text-sm">{service.title}</h4>
                     <p className="text-xs text-muted-foreground mt-1">{service.description}</p>
@@ -72,7 +85,11 @@ const ServicesSection = () => {
           </div>
 
           {/* RMC Plant Card */}
-          <div className="bg-card border border-border overflow-hidden group rounded-lg">
+          <div
+            className="bg-card border border-border overflow-hidden group rounded-lg"
+            data-animate="fade-up"
+            data-animate-delay="0.2"
+          >
             <div className="relative h-64 overflow-hidden">
               <img 
                 src={rmcImage} 
@@ -91,8 +108,13 @@ const ServicesSection = () => {
                 timely delivery to construction sites.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
-                {rmcServices.map((service) => (
-                  <div key={service.title} className="text-center p-4 bg-muted/50 rounded-md">
+                {rmcServices.map((service, index) => (
+                  <div
+                    key={service.title}
+                    className="text-center p-4 bg-muted/50 rounded-md"
+                    data-animate="fade-up"
+                    data-animate-delay={`${0.35 + index * 0.05}`}
+                  >
                     <service.icon className="h-8 w-8 text-secondary mx-auto mb-2" />
                     <h4 className="font-medium text-foreground text-sm">{service.title}</h4>
                     <p className="text-xs text-muted-foreground mt-1">{service.description}</p>
