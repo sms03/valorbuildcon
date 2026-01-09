@@ -9,81 +9,79 @@ import {
   Ruler,
   Phone,
   ArrowRight,
-  MapPin,
-  Calendar
+  MapPin
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
-import rccImage from "@/assets/rcc-work.jpg";
-import heroImage from "@/assets/hero-construction.jpg";
+import civilWorkImage from "@/assets/rcc-work.jpg";
 import project1 from "@/assets/project-1.jpg";
 import project2 from "@/assets/project-2.jpg";
 import project3 from "@/assets/project-3.jpg";
 import teamImage from "@/assets/team-work.jpg";
 
-const RCCWorkPage = () => {
+const CivilWorkPage = () => {
   const services = [
     {
       icon: Building2,
-      title: "Foundation Work",
-      description: "Strong and durable foundations for multi-story buildings, ensuring structural integrity.",
+      title: "Site Development & Earthwork",
+      description: "Bulk excavation, grading, and soil stabilization that prepare every site for accelerated construction.",
     },
     {
       icon: Layers,
-      title: "Slab Casting",
-      description: "Precision slab work with proper reinforcement and smooth finishing for all floor types.",
+      title: "Roads & Pavements",
+      description: "Concrete and bitumen roads, walkways, and hardscapes built for high load cycles and better longevity.",
     },
     {
       icon: Shield,
-      title: "Column & Beam Work",
-      description: "Structural framing with optimal strength and precise alignment for building stability.",
+      title: "Drainage & Utilities",
+      description: "Integrated storm-water drains, culverts, and underground utility corridors with minimal disruption.",
     },
     {
       icon: Ruler,
-      title: "Staircase Construction",
-      description: "Custom RCC staircases designed for functionality, safety, and aesthetic appeal.",
+      title: "Survey & Layout Control",
+      description: "Total-station layouts, level checks, and design coordination for flawless civil execution.",
     },
     {
       icon: HardHat,
-      title: "Retaining Walls",
-      description: "Engineered retaining walls for slope stability and earth retention solutions.",
+      title: "Industrial Civil Works",
+      description: "Machine foundations, plinths, equipment trenches, and high-tolerance industrial floors.",
     },
     {
       icon: Users,
-      title: "Structural Repairs",
-      description: "Expert repair and rehabilitation of existing RCC structures with modern techniques.",
+      title: "Renovation & Restoration",
+      description: "Retrofit, waterproofing, façade upgrades, and adaptive reuse of aging infrastructure.",
     },
   ];
 
   const howWeWork = [
-    { step: "01", title: "Consultation", description: "Understanding your project requirements and site conditions" },
-    { step: "02", title: "Planning", description: "Detailed structural planning and mix design preparation" },
-    { step: "03", title: "Execution", description: "Professional execution with quality materials and skilled labor" },
-    { step: "04", title: "Quality Check", description: "Rigorous testing and quality assurance at every stage" },
+    { step: "01", title: "Needs Assessment", description: "Detailed site study, geotech inputs, and compliance requirements." },
+    { step: "02", title: "Design Coordination", description: "Working with architects and consultants to finalize buildable details." },
+    { step: "03", title: "Execution & Monitoring", description: "Daily progress tracking with QA/QC labs and digital reporting." },
+    { step: "04", title: "Handover & Support", description: "Commissioning, documentation, and post-handover maintenance plans." },
   ];
 
   const safetyMeasures = [
-    "Personal Protective Equipment (PPE) for all workers",
-    "Regular safety training and toolbox talks",
-    "Proper scaffolding and fall protection systems",
-    "Fire safety equipment on all sites",
-    "First aid facilities and emergency protocols",
-    "Regular site inspections and audits",
+    "Daily toolbox talks and job-safety analysis for each activity",
+    "PPE compliance tracking with digital checklists",
+    "Barricading, traffic diversion, and signage for live sites",
+    "Emergency response teams with first-aid and fire drills",
+    "Scheduled equipment inspections and calibration records",
+    "Joint safety and quality audits with clients and consultants",
   ];
 
   const assets = [
-    { name: "Tower Cranes", count: "5+" },
-    { name: "Concrete Pumps", count: "8+" },
-    { name: "Transit Mixers", count: "15+" },
-    { name: "Batching Plants", count: "2" },
-    { name: "Skilled Workers", count: "200+" },
-    { name: "Engineers", count: "25+" },
+    { name: "Earthmoving Equipment", count: "18+" },
+    { name: "Concrete & Asphalt Crews", count: "7" },
+    { name: "Survey & QA Engineers", count: "15" },
+    { name: "Modular Formwork Systems", count: "25+" },
+    { name: "Trucks & Tippers", count: "30+" },
+    { name: "Design & PMC Partners", count: "10+" },
   ];
 
   const projects = [
-    { image: project1, title: "Commercial Complex", location: "Ahmedabad", area: "50,000 sq.ft" },
-    { image: project2, title: "Residential Tower", location: "Gandhinagar", area: "1,20,000 sq.ft" },
-    { image: project3, title: "Industrial Warehouse", location: "Sanand", area: "2,00,000 sq.ft" },
+    { image: project1, title: "Smart City Streetscape", location: "Ahmedabad CBD", area: "12 km corridor" },
+    { image: project2, title: "Industrial Civil Package", location: "Dahej SEZ", area: "1,50,000 sq.ft" },
+    { image: project3, title: "Urban Drainage Upgrade", location: "Vadodara", area: "45 MLD network" },
   ];
 
   return (
@@ -91,25 +89,25 @@ const RCCWorkPage = () => {
       {/* Hero Section */}
       <section className="relative h-[60vh] flex items-center">
         <div className="absolute inset-0 z-0">
-          <img src={rccImage} alt="RCC Work" className="w-full h-full object-cover" />
+          <img src={civilWorkImage} alt="Civil work execution" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-foreground/70" />
         </div>
         <div className="container relative z-10">
           <div className="max-w-3xl">
             <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 rounded">
-              RCC STRUCTURAL WORK
+              CIVIL WORKS & INFRASTRUCTURE
             </div>
             <h1 className="text-4xl lg:text-5xl font-bold text-background mb-4">
-              Building Strong Foundations for Tomorrow
+              Integrated Civil Construction & Infrastructure Services
             </h1>
             <p className="text-xl text-background/80 mb-6">
-              Expert Reinforced Cement Concrete structural work for residential, 
-              commercial, and industrial projects with uncompromising quality.
+              From industrial floors to city roads, we plan and deliver end-to-end civil packages
+              that improve safety, speed, and lifecycle performance.
             </p>
             <Button asChild size="lg" variant="secondary">
               <a href="tel:+919876543210">
                 <Phone className="mr-2 h-5 w-5" />
-                Get Free Quote
+                Book Site Visit
               </a>
             </Button>
           </div>
@@ -121,13 +119,13 @@ const RCCWorkPage = () => {
         <div className="container">
           <div className="text-center mb-12">
             <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 rounded">
-              OUR SERVICES
+              CIVIL SERVICES
             </div>
             <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
-              RCC Work Services
+              Civil Work & Infrastructure Services
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              We offer comprehensive RCC structural services with precision engineering and quality execution.
+              Comprehensive civil contracting solutions powered by experienced crews, reliable equipment, and transparent reporting.
             </p>
           </div>
 
@@ -148,10 +146,10 @@ const RCCWorkPage = () => {
         <div className="container">
           <div className="text-center mb-12">
             <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 rounded">
-              OUR WORK
+              PROJECT SHOWCASE
             </div>
             <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
-              Projects Completed
+              Recent Civil Engagements
             </h2>
           </div>
 
@@ -185,10 +183,10 @@ const RCCWorkPage = () => {
         <div className="container">
           <div className="text-center mb-12">
             <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 rounded">
-              OUR PROCESS
+              DELIVERY APPROACH
             </div>
             <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
-              How We Work
+              How We Deliver Civil Works
             </h2>
           </div>
 
@@ -215,14 +213,13 @@ const RCCWorkPage = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <div className="inline-block bg-primary-foreground/20 px-4 py-1 text-sm font-medium mb-4 rounded">
-                SAFETY FIRST
+                SAFETY & QUALITY
               </div>
               <h2 className="text-3xl lg:text-4xl font-bold mb-6">
-                Safety Measures We Take
+                Safety Practices On Every Civil Site
               </h2>
               <p className="opacity-80 mb-8">
-                At Valor Buildcon, safety is our top priority. We implement comprehensive 
-                safety protocols to ensure the well-being of our workers and stakeholders.
+                Civil works often operate in live environments. Our integrated HSE and QA programs protect teams, neighbors, and project timelines.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {safetyMeasures.map((measure, index) => (
@@ -245,10 +242,10 @@ const RCCWorkPage = () => {
         <div className="container">
           <div className="text-center mb-12">
             <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 rounded">
-              OUR CAPABILITIES
+              CAPACITY & REACH
             </div>
             <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
-              Assets We Have
+              Civil Resources We Deploy
             </h2>
           </div>
 
@@ -280,15 +277,14 @@ const RCCWorkPage = () => {
                 LEADERSHIP
               </div>
               <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
-                Our Director
+                Civil Leadership
               </h2>
               <h3 className="text-xl text-secondary mb-4">Mr. Vikram Patel</h3>
               <p className="text-muted-foreground mb-4">Managing Director, Valor Buildcon LLP</p>
               <p className="text-muted-foreground leading-relaxed">
-                With over 20 years of experience in the construction industry, Mr. Vikram Patel 
-                leads Valor Buildcom with a vision of excellence and innovation. Under his 
-                leadership, the company has successfully delivered hundreds of projects across 
-                Gujarat and established itself as a trusted name in RCC construction.
+                With over 20 years in civil infrastructure, Mr. Vikram Patel guides Valor Buildcon to
+                deliver smarter, faster, and safer works. His site-first leadership style empowers
+                teams to collaborate with consultants, industries, and civic agencies across Gujarat.
               </p>
             </div>
           </div>
@@ -301,10 +297,10 @@ const RCCWorkPage = () => {
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="text-center md:text-left">
               <h2 className="text-2xl lg:text-3xl font-bold text-secondary-foreground mb-2">
-                Ready to Start Your Project?
+                Need a Civil Execution Partner?
               </h2>
               <p className="text-secondary-foreground/80">
-                Contact us today for a free consultation and quote.
+                Let us plan site visits, cost options, and phasing strategies for your scope.
               </p>
             </div>
             <div className="flex gap-4">
@@ -325,4 +321,4 @@ const RCCWorkPage = () => {
   );
 };
 
-export default RCCWorkPage;
+export default CivilWorkPage;
