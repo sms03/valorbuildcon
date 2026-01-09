@@ -1,27 +1,42 @@
-import { Star, Quote } from "lucide-react";
+import { Building2, Briefcase } from "lucide-react";
 
 const TestimonialsSection = () => {
-  const testimonials = [
+  const partners = [
     {
-      name: "Rajesh Patel",
-      company: "Patel Constructions",
-      role: "Managing Director",
-      content: "Valor Buildcon's RCC work quality is exceptional. Their team completed our 10-story residential project with outstanding precision and on schedule. Highly recommend their services.",
-      rating: 5,
+      name: "Larsen & Toubro",
+      sector: "Infrastructure",
+      focus: "High-rise civil works",
+      description: "Delivered structural frames for premium residential towers with accelerated timelines and zero-compromise safety.",
     },
     {
-      name: "Amit Shah",
-      company: "Shah Infrastructure",
-      role: "Project Manager",
-      content: "The RMC supply from Valor Buildcon is always consistent and timely. Their mix design team helped us achieve the perfect concrete grade for our industrial warehouse project.",
-      rating: 5,
+      name: "Adani Realty",
+      sector: "Real Estate",
+      focus: "Mixed-use townships",
+      description: "Executed RCC packages and supplied RMC for large-format township amenities across Ahmedabad.",
     },
     {
-      name: "Priya Mehta",
-      company: "Mehta Developers",
-      role: "Director",
-      content: "Working with Valor Buildcon has been a pleasure. Their professional approach, quality materials, and expert team make them our preferred construction partner.",
-      rating: 5,
+      name: "Tata Projects",
+      sector: "Industrial",
+      focus: "Industrial foundations",
+      description: "Supported critical infrastructure builds with precision batching and on-site pour management.",
+    },
+    {
+      name: "Godrej Properties",
+      sector: "Residential",
+      focus: "Premium residences",
+      description: "Provided turnkey civil work execution for boutique residential blocks and lifestyle clubs.",
+    },
+    {
+      name: "Shapoorji Pallonji",
+      sector: "Commercial",
+      focus: "Corporate campuses",
+      description: "Managed structural cores and concrete logistics for sustainable office campuses.",
+    },
+    {
+      name: "Hiranandani Communities",
+      sector: "Townships",
+      focus: "Bulk concrete supply",
+      description: "Operated dedicated batching setups to fuel large-scale township infrastructure.",
     },
   ];
 
@@ -30,37 +45,35 @@ const TestimonialsSection = () => {
       <div className="container">
         <div className="text-center mb-12">
           <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 rounded">
-            CLIENT TESTIMONIALS
+            TRUSTED PARTNERS
           </div>
           <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
-            What Our Clients Say
+            Companies We Have Worked With
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Don't just take our word for it. Here's what our valued clients 
-            have to say about working with Valor Buildcon.
+            We collaborate with India’s most respected developers and infrastructure leaders,
+            supporting them from mix-design to final pour on marquee projects.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
-            <div 
-              key={index} 
-              className="bg-card border border-border p-8 relative rounded-lg"
-            >
-              <Quote className="h-10 w-10 text-muted/50 absolute top-6 right-6" />
-              <div className="flex gap-1 mb-4">
-                {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} className="h-5 w-5 fill-secondary text-secondary" />
-                ))}
-              </div>
-              <p className="text-muted-foreground mb-6 leading-relaxed">
-                "{testimonial.content}"
-              </p>
-              <div className="border-t border-border pt-4">
-                <div className="font-semibold text-foreground">{testimonial.name}</div>
-                <div className="text-sm text-muted-foreground">
-                  {testimonial.role}, {testimonial.company}
+          {partners.map((partner) => (
+            <div key={partner.name} className="bg-card border border-border p-8 rounded-lg flex flex-col gap-4">
+              <div className="flex items-center gap-3">
+                <div className="h-12 w-12 rounded-full bg-secondary text-secondary-foreground flex items-center justify-center">
+                  <Building2 className="h-6 w-6" />
                 </div>
+                <div>
+                  <div className="font-semibold text-foreground text-lg">{partner.name}</div>
+                  <div className="text-sm text-muted-foreground">{partner.sector}</div>
+                </div>
+              </div>
+              <p className="text-muted-foreground leading-relaxed flex-1">
+                {partner.description}
+              </p>
+              <div className="flex items-center gap-2 text-sm text-foreground font-medium">
+                <Briefcase className="h-4 w-4 text-primary" />
+                <span>{partner.focus}</span>
               </div>
             </div>
           ))}
