@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import useGsapAnimations from "@/hooks/use-gsap-animations";
 import Header from "./Header";
 import Footer from "./Footer";
 
@@ -9,6 +10,7 @@ interface LayoutProps {
 
 const Layout = ({ children }: LayoutProps) => {
   const location = useLocation();
+  useGsapAnimations();
 
   useEffect(() => {
     window.scrollTo(0, 0);
