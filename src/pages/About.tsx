@@ -72,6 +72,35 @@ const About = () => {
           </p>
         </div>
       </section>
+
+      <section className="container pb-20">
+        <div className="grid md:grid-cols-[1fr_1.2fr] gap-8 items-center">
+          <div className="space-y-5">
+            <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium rounded">
+              OUR LOCATION
+            </div>
+            <h3 className="text-3xl font-semibold text-foreground">Visit Our Operations Hub</h3>
+            <p className="text-muted-foreground text-lg">
+              Meet the Valor Buildcon team at our headquarters in Marunji, near Hinjawadi Phase 2, Pune. We welcome
+              partners, clients, and collaborators to explore ongoing RCC and RMC initiatives firsthand.
+            </p>
+            <div className="text-muted-foreground">
+              <p className="font-semibold text-foreground">Valor Buildcon LLP</p>
+              <p>Survey 85/5, Near Marunji Chowk</p>
+              <p>Hinjawadi Phase 2, Pune 411057</p>
+            </div>
+          </div>
+          <div className="rounded-3xl overflow-hidden shadow-lg border border-border min-h-[320px]">
+            <iframe
+              title="Valor Buildcon HQ Map"
+              src="https://www.google.com/maps?q=18.619755,73.730238&z=17&output=embed"
+              className="w-full h-[320px] md:h-[420px]"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+      </section>
     </Layout>
   );
 };
