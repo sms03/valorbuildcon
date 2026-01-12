@@ -54,8 +54,7 @@ const Footer = () => {
               <li className="flex items-start gap-3">
                 <MapPin className="h-5 w-5 shrink-0 mt-0.5" />
                 <span className="opacity-80">
-                  Industrial Area, Sector 12<br />
-                  Ahmedabad, Gujarat - 380015
+                  JPCJ+323, Kate Wasti, Punawale, Pimpri-Chinchwad, Dattwadi, Maharashtra 411033<br />
                 </span>
               </li>
               <li className="flex items-center gap-3">
