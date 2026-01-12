@@ -93,7 +93,7 @@ const RMCPlantPage = () => {
               precision mix designs to construction sites across the region.
             </p>
             <Button asChild size="lg" variant="secondary">
-              <a href="tel:+919876543210">
+              <a href="tel:+918855860707">
                 <Phone className="mr-2 h-5 w-5" />
                 Order Now
               </a>
@@ -394,7 +394,7 @@ const RMCPlantPage = () => {
             </div>
             <div className="flex gap-4">
               <Button asChild size="lg" variant="outline" className="border-secondary-foreground text-secondary-foreground hover:bg-secondary-foreground hover:text-secondary">
-                <a href="tel:+919876543210">
+                <a href="tel:+918855860707">
                   <Phone className="mr-2 h-5 w-5" />
                   Call Now
                 </a>
