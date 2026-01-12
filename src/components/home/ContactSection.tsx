@@ -40,14 +40,13 @@ const ContactSection = () => {
     {
       icon: MapPin,
       title: "Address",
-      content: "Industrial Area, Sector 12, Ahmedabad, Gujarat - 380015",
-      link: "#",
+      content: "JPCJ+323, Kate Wasti, Punawale, Pimpri-Chinchwad, Dattwadi, Maharashtra 411033",
+      link: "https://maps.app.goo.gl/pH2chMFMZ5iY3uwz6",
     },
     {
       icon: Clock,
       title: "Working Hours",
       content: "Mon - Sat: 9:00 AM - 6:00 PM",
-      link: "#",
     },
   ];
 
