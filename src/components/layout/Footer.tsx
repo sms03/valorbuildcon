@@ -10,7 +10,7 @@ const Footer = () => {
                 <img src="/valor_logo.png" alt="Valor logo" className="h-10 w-auto object-contain" />
                 <div>
                   <div className="font-semibold text-sky-500 ">VALOR BUILDCON LLP</div>
-                  <div className="text-xs opacity-80">Construction Excellence</div>
+                  <div className="text-xs opacity-80">Experience the Exellence</div>
                 </div>
               </div>
             <p className="text-sm opacity-80 leading-relaxed">
@@ -34,7 +34,7 @@ const Footer = () => {
                 <Link to="/rmc-plant" className="opacity-80 hover:opacity-100 transition-opacity">RMC Plant</Link>
               </li>
               <li>
-                <Link to="/#about" className="opacity-80 hover:opacity-100 transition-opacity">About Us</Link>
+                <Link to="/about" className="opacity-80 hover:opacity-100 transition-opacity">About Us</Link>
               </li>
               <li>
                 <Link to="/projects" className="opacity-80 hover:opacity-100 transition-opacity">Our Projects</Link>
@@ -57,8 +57,8 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="h-5 w-5 shrink-0" />
-                <a href="tel:+919876543210" className="opacity-80 hover:opacity-100">
-                  +91 98765 43210
+                <a href="tel:+918855860707" className="opacity-80 hover:opacity-100">
+                  +91 88558 60707
                 </a>
               </li>
               <li className="flex items-center gap-3">
@@ -83,8 +83,8 @@ const Footer = () => {
               © {new Date().getFullYear()} Valor Buildcon LLP. All Rights Reserved.
             </p>
             <div className="flex gap-6">
-              <Link to="/privacy" className="opacity-80 hover:opacity-100">Privacy Policy</Link>
-              <Link to="/terms" className="opacity-80 hover:opacity-100">Terms of Service</Link>
+              {/*<Link to="/privacy" className="opacity-80 hover:opacity-100">Privacy Policy</Link>
+              <Link to="/terms" className="opacity-80 hover:opacity-100">Terms of Service</Link>*/}
             </div>
           </div>
         </div>
