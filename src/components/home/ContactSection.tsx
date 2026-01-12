@@ -28,8 +28,8 @@ const ContactSection = () => {
     {
       icon: Phone,
       title: "Phone",
-      content: "+91 98765 43210",
-      link: "tel:+919876543210",
+      content: "+91 88558 60707",
+      link: "tel:+918855860707",
     },
     {
       icon: Mail,
@@ -137,7 +137,7 @@ const ContactSection = () => {
                     id="phone"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    placeholder="+91 98765 43210"
+                    placeholder="+91 88558 60707"
                     required
                   />
                 </div>
