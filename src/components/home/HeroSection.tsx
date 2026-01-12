@@ -20,9 +20,8 @@ const HeroSection = () => {
           muted
           playsInline
           aria-hidden="true"
-          poster={heroImage}
         >
-          <source src="/valor%20demo.mp4" type="video/mp4" />
+          <source src="/heros_video.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/20 to-black/60" />
       </div>
@@ -96,9 +95,9 @@ const HeroSection = () => {
             <p className="font-semibold">Contact us today for a free consultation</p>
           </div>
           <Button asChild variant="contact" size="lg">
-            <a href="tel:+919876543210">
+            <a href="tel:+918855860707">
               <Phone className="mr-2 h-5 w-5" />
-              +91 98765 43210
+              +91 88558 60707
             </a>
           </Button>
         </div>
