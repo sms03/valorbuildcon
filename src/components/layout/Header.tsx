@@ -75,9 +75,9 @@ const Header = () => {
       <div className="bg-[hsl(355_34%_33%)] text-white border-b border-border/60 py-2">
         <div className="container flex justify-between items-center text-sm">
           <div className="flex items-center gap-6 text-white/80">
-            <a href="tel:+919876543210" className="flex items-center gap-2 hover:text-white transition-colors">
+            <a href="tel:+918855860707" className="flex items-center gap-2 hover:text-white transition-colors">
               <Phone className="h-4 w-4" />
-              <span className="hidden sm:inline">+91 98765 43210</span>
+              <span className="hidden sm:inline">+91 88558 60707</span>
             </a>
             <a href="mailto:info@valorbuildcon.com" className="flex items-center gap-2 hover:text-white transition-colors">
               <Mail className="h-4 w-4" />
@@ -100,7 +100,7 @@ const Header = () => {
             />
             <div className="hidden sm:block">
               <div className="font-semibold text-sky-500">Valor Buildcon LLP</div>
-              <div className="text-xs text-muted-foreground">Construction Excellence</div>
+              <div className="text-xs text-muted-foreground">Experience the Exellence</div>
             </div>
           </Link>
 
