@@ -95,7 +95,7 @@ const HeroSection = () => {
             <p className="text-sm opacity-80">Need a quote for your project?</p>
             <p className="font-semibold">Contact us today for a free consultation</p>
           </div>
-          <Button asChild variant="outline" size="lg" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
+          <Button asChild variant="contact" size="lg">
             <a href="tel:+919876543210">
               <Phone className="mr-2 h-5 w-5" />
               +91 98765 43210
