@@ -16,6 +16,11 @@ type NavItem = {
   children: NavChild[];
 };
 
+const phoneNumbers = [
+  { label: "+91 88558 60707", href: "tel:+918855860707" },
+  { label: "+91 77450 03646", href: "tel:+917745003646" },
+];
+
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openMobileDropdown, setOpenMobileDropdown] = useState<string | null>(null);
@@ -111,10 +116,16 @@ const Header = () => {
       <div className="bg-[hsl(355_34%_33%)] text-white border-b border-border/60 py-2">
         <div className="container flex flex-col gap-2 text-center text-sm sm:flex-row sm:items-center sm:justify-between">
           <div className="flex flex-wrap items-center justify-center gap-3 text-white/80 sm:justify-start sm:gap-6">
-            <a href="tel:+918855860707" className="flex items-center gap-2 hover:text-white transition-colors">
-              <Phone className="h-4 w-4" />
-              <span>+91 88558 60707</span>
-            </a>
+            {phoneNumbers.map((number) => (
+              <a
+                key={number.href}
+                href={number.href}
+                className="flex items-center gap-2 hover:text-white transition-colors"
+              >
+                <Phone className="h-4 w-4" />
+                <span>{number.label}</span>
+              </a>
+            ))}
             <a href="mailto:info@valorbuildcon.com" className="flex items-center gap-2 hover:text-white transition-colors">
               <Mail className="h-4 w-4" />
               <span>info@valorbuildcon.com</span>
