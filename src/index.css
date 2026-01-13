@@ -73,6 +73,7 @@ Color Palette: #322D29, #72383D, #AC9C8D, #D1C7BD, #D9D9D9, #EFE9E1
 
     --tracking-normal: 0em;
     --spacing: 0.25rem;
+    --header-height: 140px;
   }
 
   .dark {
@@ -137,8 +138,16 @@ Color Palette: #322D29, #72383D, #AC9C8D, #D1C7BD, #D9D9D9, #EFE9E1
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground overflow-x-hidden antialiased;
+  }
+
+  section[id] {
+    scroll-margin-top: calc(var(--header-height, 140px) + 1rem);
   }
 
   * {
