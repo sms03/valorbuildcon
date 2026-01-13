@@ -147,7 +147,7 @@ const Header = () => {
             />
             <div className="hidden sm:block">
               <div className="font-semibold text-sky-500">Valor Buildcon LLP</div>
-              <div className="text-xs text-muted-foreground">Experience the Exellence</div>
+              <div className="text-xs text-muted-foreground">Experience the Excellence</div>
             </div>
           </Link>
 

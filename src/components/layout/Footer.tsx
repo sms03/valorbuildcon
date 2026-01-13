@@ -16,7 +16,7 @@ const Footer = () => {
                 <img src="/valor_logo.png" alt="Valor logo" className="h-10 w-auto object-contain" />
                 <div>
                   <div className="font-semibold text-sky-500 ">VALOR BUILDCON LLP</div>
-                  <div className="text-xs opacity-80">Experience the Exellence</div>
+                  <div className="text-xs opacity-80">Experience the Excellence</div>
                 </div>
               </div>
             <p className="text-sm opacity-80 leading-relaxed">
