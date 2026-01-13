@@ -1,4 +1,4 @@
-import { FocusEvent, useEffect, useRef, useState } from "react";
+import { FocusEvent, useCallback, useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Phone, Mail, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -21,6 +21,7 @@ const Header = () => {
   const [openMobileDropdown, setOpenMobileDropdown] = useState<string | null>(null);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const dropdownCloseTimeout = useRef<number | null>(null);
+  const headerRef = useRef<HTMLElement | null>(null);
   const location = useLocation();
   const navItems: NavItem[] = [{
     label: "Home",
@@ -68,29 +69,64 @@ const Header = () => {
       setActiveDropdown(null);
     }
   };
+  const syncHeaderHeight = useCallback(() => {
+    if (typeof window === "undefined") return;
+    if (!headerRef.current) return;
+
+    const { height } = headerRef.current.getBoundingClientRect();
+    document.documentElement.style.setProperty("--header-height", `${Math.ceil(height)}px`);
+  }, []);
+
   useEffect(() => {
     if (!isMenuOpen) setOpenMobileDropdown(null);
   }, [isMenuOpen]);
-  return <header className="fixed top-0 left-0 right-0 z-50 bg-[hsl(34_33%_91%)] border-b border-border shadow-sm">
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    syncHeaderHeight();
+
+    const handleResize = () => syncHeaderHeight();
+    window.addEventListener("resize", handleResize);
+
+    let resizeObserver: ResizeObserver | null = null;
+    if (headerRef.current && "ResizeObserver" in window) {
+      resizeObserver = new ResizeObserver(() => syncHeaderHeight());
+      resizeObserver.observe(headerRef.current);
+    }
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      if (resizeObserver) {
+        resizeObserver.disconnect();
+      }
+    };
+  }, [syncHeaderHeight]);
+
+  useEffect(() => {
+    syncHeaderHeight();
+  }, [isMenuOpen, openMobileDropdown, syncHeaderHeight]);
+
+  return <header ref={headerRef} className="fixed top-0 left-0 right-0 z-50 bg-[hsl(34_33%_91%)] border-b border-border shadow-sm">
       <div className="bg-[hsl(355_34%_33%)] text-white border-b border-border/60 py-2">
-        <div className="container flex justify-between items-center text-sm">
-          <div className="flex items-center gap-6 text-white/80">
+        <div className="container flex flex-col gap-2 text-center text-sm sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex flex-wrap items-center justify-center gap-3 text-white/80 sm:justify-start sm:gap-6">
             <a href="tel:+918855860707" className="flex items-center gap-2 hover:text-white transition-colors">
               <Phone className="h-4 w-4" />
-              <span className="hidden sm:inline">+91 88558 60707</span>
+              <span>+91 88558 60707</span>
             </a>
             <a href="mailto:info@valorbuildcon.com" className="flex items-center gap-2 hover:text-white transition-colors">
               <Mail className="h-4 w-4" />
-              <span className="hidden sm:inline">info@valorbuildcon.com</span>
+              <span>info@valorbuildcon.com</span>
             </a>
           </div>
-          <div className="text-xs sm:text-sm text-white/90">
+          <div className="text-xs sm:text-sm text-white/90 text-center sm:text-right">
             Building Excellence Since 2010
           </div>
         </div>
       </div>
 
-      <div className="container py-7">
+      <div className="container py-5 lg:py-7">
         <nav className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-1">
             <img
