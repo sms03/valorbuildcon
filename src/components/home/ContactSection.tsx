@@ -5,6 +5,44 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 
+const phoneNumbers = [
+  { label: "+91 88558 60707", href: "tel:+918855860707" },
+  { label: "+91 77450 03646", href: "tel:+917745003646" },
+];
+
+type ContactInfoItem = {
+  icon: typeof Phone;
+  title: string;
+  content: string | string[];
+  links?: string[];
+};
+
+const contactInfo: ContactInfoItem[] = [
+  {
+    icon: Phone,
+    title: "Phone",
+    content: phoneNumbers.map((number) => number.label),
+    links: phoneNumbers.map((number) => number.href),
+  },
+  {
+    icon: Mail,
+    title: "Email",
+    content: "info@valorbuildcon.com",
+    links: ["mailto:info@valorbuildcon.com"],
+  },
+  {
+    icon: MapPin,
+    title: "Address",
+    content: "JPCJ+323, Kate Wasti, Punawale, Pimpri-Chinchwad, Dattwadi, Maharashtra 411033",
+    links: ["https://maps.app.goo.gl/pH2chMFMZ5iY3uwz6"],
+  },
+  {
+    icon: Clock,
+    title: "Working Hours",
+    content: "Mon - Sat: 9:00 AM - 6:00 PM",
+  },
+];
+
 const ContactSection = () => {
   const { toast } = useToast();
   const [formData, setFormData] = useState({
@@ -23,33 +61,6 @@ const ContactSection = () => {
     });
     setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
   };
-
-  const contactInfo = [
-    {
-      icon: Phone,
-      title: "Phone",
-      content: "+91 88558 60707",
-      link: "tel:+918855860707",
-    },
-    {
-      icon: Mail,
-      title: "Email",
-      content: "info@valorbuildcon.com",
-      link: "mailto:info@valorbuildcon.com",
-    },
-    {
-      icon: MapPin,
-      title: "Address",
-      content: "JPCJ+323, Kate Wasti, Punawale, Pimpri-Chinchwad, Dattwadi, Maharashtra 411033",
-      link: "https://maps.app.goo.gl/pH2chMFMZ5iY3uwz6",
-    },
-    {
-      icon: Clock,
-      title: "Working Hours",
-      content: "Mon - Sat: 9:00 AM - 6:00 PM",
-    },
-  ];
-
   return (
     <section
       id="contact"
@@ -75,9 +86,8 @@ const ContactSection = () => {
           {/* Contact Info */}
           <div className="space-y-6">
             {contactInfo.map((item, index) => (
-              <a
+              <div
                 key={item.title}
-                href={item.link}
                 className="flex items-start gap-4 p-4 bg-card border border-border hover:border-primary transition-colors rounded-lg"
                 data-animate="fade-up"
                 data-animate-delay={`${0.2 + index * 0.05}`}
@@ -87,9 +97,36 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <h3 className="font-medium text-foreground">{item.title}</h3>
-                  <p className="text-sm text-muted-foreground">{item.content}</p>
+                  {Array.isArray(item.content) ? (
+                    <div className="mt-1 flex flex-col gap-1">
+                      {item.content.map((value, idx) => (
+                        item.links?.[idx] ? (
+                          <a
+                            key={value}
+                            href={item.links[idx]}
+                            className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                          >
+                            {value}
+                          </a>
+                        ) : (
+                          <p key={value} className="text-sm text-muted-foreground">
+                            {value}
+                          </p>
+                        )
+                      ))}
+                    </div>
+                  ) : item.links?.[0] ? (
+                    <a
+                      href={item.links[0]}
+                      className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                    >
+                      {item.content}
+                    </a>
+                  ) : (
+                    <p className="text-sm text-muted-foreground">{item.content}</p>
+                  )}
                 </div>
-              </a>
+              </div>
             ))}
           </div>
 
@@ -137,7 +174,7 @@ const ContactSection = () => {
                     id="phone"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    placeholder="+91 88558 60707"
+                    placeholder="+91 1234567890"
                     required
                   />
                 </div>
