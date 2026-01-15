@@ -20,33 +20,33 @@ const CivilWorkPage = () => {
   const services = [
     {
       icon: Building2,
-      title: "Site Development & Earthwork",
-      description: "Bulk excavation, grading, and soil stabilization that prepare every site for accelerated construction.",
+      title: "Residential RCC Frames",
+      description: "G+20 structural frames, podium slabs, and amenity blocks executed across Pune's western corridor.",
     },
     {
       icon: Layers,
-      title: "Roads & Pavements",
-      description: "Concrete and bitumen roads, walkways, and hardscapes built for high load cycles and better longevity.",
+      title: "Commercial Podiums & Basements",
+      description: "Post-tension slabs, parking decks, and waterproof podiums for mixed-use campuses.",
     },
     {
       icon: Shield,
-      title: "Drainage & Utilities",
-      description: "Integrated storm-water drains, culverts, and underground utility corridors with minimal disruption.",
+      title: "Drainage & Utility Corridors",
+      description: "UG drainage, rainwater harvesting pits, and utility sleeves for large-format townships.",
     },
     {
       icon: Ruler,
-      title: "Survey & Layout Control",
-      description: "Total-station layouts, level checks, and design coordination for flawless civil execution.",
+      title: "Survey, Layout & QA",
+      description: "Digital layout control, cube testing coordination, and documentation for consultants.",
     },
     {
       icon: HardHat,
-      title: "Industrial Civil Works",
-      description: "Machine foundations, plinths, equipment trenches, and high-tolerance industrial floors.",
+      title: "Industrial Foundations",
+      description: "Machine bases, heavy-duty floors, and HT bolt layouts for manufacturing clients.",
     },
     {
       icon: Users,
-      title: "Renovation & Restoration",
-      description: "Retrofit, waterproofing, façade upgrades, and adaptive reuse of aging infrastructure.",
+      title: "Turnkey Infrastructure",
+      description: "Approach roads, boundary walls, and streetscape upgrades for large developers.",
     },
   ];
 
@@ -66,19 +66,19 @@ const CivilWorkPage = () => {
     "Joint safety and quality audits with clients and consultants",
   ];
 
-  const assets = [
-    { name: "Earthmoving Equipment", count: "18+" },
-    { name: "Concrete & Asphalt Crews", count: "7" },
-    { name: "Survey & QA Engineers", count: "15" },
-    { name: "Modular Formwork Systems", count: "25+" },
-    { name: "Trucks & Tippers", count: "30+" },
-    { name: "Design & PMC Partners", count: "10+" },
+  const equipmentList = [
+    { name: "Steel & Aluminum Formwork", detail: "12+ modular shuttering sets for towers and podiums" },
+    { name: "Concrete Vibrators & Screeds", detail: "18 units covering slabs, cores, and podium decks" },
+    { name: "Rebar Cutting & Bending Machines", detail: "4 automated stations for faster steel cycles" },
+    { name: "Passenger & Material Hoists", detail: "3 hoists with 1.5T capacity for vertical transport" },
+    { name: "Laser Levels & Total Stations", detail: "Advanced survey suite for millimeter-accurate layouts" },
+    { name: "Transit Mixers & Pumps", detail: "15+ mixers and 4 pumps paired with in-house RMC plant" },
   ];
 
   const projects = [
-    { image: "/images/IMG-20260113-WA0000.jpg", title: "Smart City Streetscape", location: "Ahmedabad CBD", area: "12 km corridor" },
-    { image: "/images/IMG-20260113-WA0001.jpg", title: "Industrial Civil Package", location: "Dahej SEZ", area: "1,50,000 sq.ft" },
-    { image: "/images/IMG-20260113-WA0002.jpg", title: "Urban Drainage Upgrade", location: "Vadodara", area: "45 MLD network" },
+    { image: "/images/IMG-20260113-WA0000.jpg", title: "Life Republic Podium Works", location: "Hinjawadi, Pune", company: "Kolte Patil Life Republic" },
+    { image: "/images/IMG-20260113-WA0001.jpg", title: "Legacy Avenue RCC Shells", location: "Pimpri-Chinchwad", company: "Legacy Life Spaces" },
+    { image: "/images/IMG-20260113-WA0002.jpg", title: "Commercial Utility Upgrade", location: "Baner, Pune", company: "Millennium Developers" },
   ];
 
   const civilGalleryImages = [
@@ -94,6 +94,19 @@ const CivilWorkPage = () => {
     "/images/IMG-20260113-WA0009.jpg",
     "/images/IMG-20260113-WA0010.jpg",
     "/images/IMG-20260113-WA0011.jpg",
+  ];
+
+  const civilTeam = [
+    {
+      name: "Mahesh Chavre",
+      role: "Civil Delivery Lead",
+      focus: "Leads RCC execution, crew deployment, and coordination with consultants across all active projects.",
+    },
+    {
+      name: "Vishwajit Biswas",
+      role: "Senior Site Manager",
+      focus: "Oversees day-to-day site safety, QA/QC logs, and contractor interfaces for township scopes.",
+    },
   ];
 
   return (
@@ -113,8 +126,8 @@ const CivilWorkPage = () => {
               Integrated Civil Construction & Infrastructure Services
             </h1>
             <p className="text-xl text-background/80 mb-6">
-              From industrial floors to city roads, we plan and deliver end-to-end civil packages
-              that improve safety, speed, and lifecycle performance.
+              Pune-focused RCC and infrastructure partner with 7 years of execution experience,
+              delivering podiums, towers, and amenity blocks with disciplined QA/QC.
             </p>
             <Button asChild size="lg" variant="secondary">
               <a href="tel:+918855860707">
@@ -137,7 +150,7 @@ const CivilWorkPage = () => {
               Civil Work & Infrastructure Services
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Comprehensive civil contracting solutions powered by experienced crews, reliable equipment, and transparent reporting.
+              Comprehensive RCC, podium, and infrastructure contracting packages tailored for Pune's leading developers and industries.
             </p>
           </div>
 
@@ -197,11 +210,12 @@ const CivilWorkPage = () => {
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-semibold text-foreground mb-2">{project.title}</h3>
-                  <div className="flex items-center gap-2 text-muted-foreground text-sm">
-                    <MapPin className="h-4 w-4" />
-                    <span>{project.location}</span>
-                    <span className="mx-2">•</span>
-                    <span>{project.area}</span>
+                  <div className="flex flex-col text-muted-foreground text-sm gap-1">
+                    <span className="flex items-center gap-2">
+                      <MapPin className="h-4 w-4" />
+                      {project.location}
+                    </span>
+                    <span className="font-medium">{project.company}</span>
                   </div>
                 </div>
               </div>
@@ -327,58 +341,63 @@ const CivilWorkPage = () => {
               CAPACITY & REACH
             </div>
             <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
-              Civil Resources We Deploy
+              Civil Machines & Tools In-House
             </h2>
           </div>
 
           <div
-            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
             data-animate="fade-up"
             data-animate-delay="0.2"
-            data-animate-targets="[data-asset-card]"
+            data-animate-targets="[data-equipment-card]"
             data-animate-stagger="0.06"
           >
-            {assets.map((asset, index) => (
+            {equipmentList.map((item, index) => (
               <div
                 key={index}
-                className="bg-card border border-border p-6 text-center rounded-lg"
-                data-asset-card
+                className="bg-card border border-border p-6 rounded-lg"
+                data-equipment-card
               >
-                <div className="text-3xl font-bold text-primary mb-2">{asset.count}</div>
-                <div className="text-sm text-muted-foreground">{asset.name}</div>
+                <div className="text-lg font-semibold text-foreground mb-2">{item.name}</div>
+                <p className="text-sm text-muted-foreground">{item.detail}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Director Section */}
+      {/* Leadership & Staff Section */}
       <section className="py-20 bg-muted/30">
         <div className="container">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="relative" data-animate="fade-right" data-animate-delay="0.1">
-              <div className="bg-muted h-[400px] w-full flex items-center justify-center rounded-lg">
-                <div className="text-center">
-                  <Users className="h-20 w-20 text-muted-foreground mx-auto mb-4" />
-                  <p className="text-muted-foreground">Director Photo</p>
+          <div className="text-center mb-12" data-animate="fade-up" data-animate-delay="0.1">
+            <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 rounded">
+              LEADERSHIP & STAFF
+            </div>
+            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
+              Civil Leadership & Core Site Team
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Photo placeholders below will be replaced with official portraits once the final image assets are shared.
+            </p>
+          </div>
+
+          <div
+            className="grid grid-cols-1 md:grid-cols-2 gap-8"
+            data-animate="fade-up"
+            data-animate-delay="0.2"
+            data-animate-targets="[data-civil-team]"
+            data-animate-stagger="0.08"
+          >
+            {civilTeam.map((member) => (
+              <div key={member.name} className="bg-card border border-border rounded-2xl p-8" data-civil-team>
+                <div className="aspect-[4/3] rounded-xl bg-muted flex items-center justify-center text-center text-sm text-muted-foreground mb-6">
+                  <span>Photo placeholder for {member.name}</span>
                 </div>
+                <h3 className="text-2xl font-semibold text-foreground">{member.name}</h3>
+                <p className="text-primary font-medium mb-3">{member.role}</p>
+                <p className="text-muted-foreground leading-relaxed">{member.focus}</p>
               </div>
-            </div>
-            <div data-animate="fade-left" data-animate-delay="0.2">
-              <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 rounded">
-                LEADERSHIP
-              </div>
-              <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
-                Civil Leadership
-              </h2>
-              <h3 className="text-xl text-secondary mb-4">Mr. Vikram Patel</h3>
-              <p className="text-muted-foreground mb-4">Managing Director, Valor Buildcon LLP</p>
-              <p className="text-muted-foreground leading-relaxed">
-                With over 20 years in civil infrastructure, Mr. Vikram Patel guides Valor Buildcon to
-                deliver smarter, faster, and safer works. His site-first leadership style empowers
-                teams to collaborate with consultants, industries, and civic agencies across Gujarat.
-              </p>
-            </div>
+            ))}
           </div>
         </div>
       </section>
