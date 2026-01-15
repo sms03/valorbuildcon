@@ -9,6 +9,7 @@ const pillars = [
     description:
       "Guides Valor Buildcon's long-term strategy, forging partnerships and cultivating a culture of craftsmanship across every site we touch.",
     icon: Shield,
+    photoAlt: "Virendra Anil Kate portrait placeholder",
   },
   {
     name: "Abhayraje Gangadhar Vinode",
@@ -17,6 +18,7 @@ const pillars = [
     description:
       "Oversees civil execution, quality labs, and on-ground teams to ensure structures are delivered safely, precisely, and ahead of schedule.",
     icon: Target,
+    photoAlt: "Abhayraje Gangadhar Vinode portrait placeholder",
   },
   {
     name: "Abhilash Tukaram Kalokhe",
@@ -25,6 +27,7 @@ const pillars = [
     description:
       "Leads client engagements and translates complex design intents into actionable construction programs across RCC and RMC projects.",
     icon: HardHat,
+    photoAlt: "Abhilash Tukaram Kalokhe portrait placeholder",
   },
 ];
 
@@ -59,12 +62,15 @@ const About = () => {
         data-animate-stagger="0.12"
         data-animate-targets="[data-pillar-card]"
       >
-        {pillars.map(({ name, title, focus, description, icon: Icon }) => (
+        {pillars.map(({ name, title, focus, description, icon: Icon, photoAlt }) => (
           <div
             key={name}
             className="bg-card border border-border rounded-2xl p-8 flex flex-col gap-4 shadow-sm"
             data-pillar-card
           >
+            <div className="aspect-square w-full rounded-2xl bg-muted flex items-center justify-center text-center text-sm text-muted-foreground">
+              <span>{photoAlt}</span>
+            </div>
             <div className="h-14 w-14 rounded-full bg-primary/10 text-primary flex items-center justify-center">
               <Icon className="h-7 w-7" />
             </div>
