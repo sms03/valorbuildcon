@@ -1,0 +1,44 @@
+{
+  "galleryImages": [
+    "/images/rmc_work/IMG-20260113-WA0014.jpg",
+    "/images/rmc_work/IMG-20260113-WA0019.jpg",
+    "/images/rmc_work/IMG-20260113-WA0023.jpg"
+  ],
+  "leadership": [
+    {
+      "name": "Virendra Anil Kate",
+      "role": "Founding Partner",
+      "focus": "Oversees overall RMC strategy and client relationships."
+    },
+    {
+      "name": "Abhayraje Gangadhar Vinode",
+      "role": "Operations Partner",
+      "focus": "Leads batching performance, fleet readiness, and QA/QC routines."
+    },
+    {
+      "name": "Abhilash Tukaram Kalokhe",
+      "role": "Projects Partner",
+      "focus": "Manages delivery schedules, billing, and coordination with developer sites."
+    }
+  ],
+  "staff": [
+    {
+      "name": "Plant Team Member 01",
+      "role": "Plant Supervisor",
+      "note": "Name & portrait to be provided",
+      "shift": "Day Shift"
+    },
+    {
+      "name": "Plant Team Member 02",
+      "role": "Dispatch Controller",
+      "note": "Awaiting final details",
+      "shift": "Night Shift"
+    },
+    {
+      "name": "Plant Team Member 03",
+      "role": "Maintenance Lead",
+      "note": "Client will confirm",
+      "shift": "Rotational"
+    }
+  ]
+}
