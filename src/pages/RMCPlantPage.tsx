@@ -12,6 +12,7 @@ import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import rmcImage from "@/assets/rmc-plant.jpg";
 import qualityLab from "@/assets/quality-lab.jpg";
+import { useContent } from "@/hooks/use-content";
 
 const RMCPlantPage = () => {
   const plantInfo = [
@@ -70,6 +71,16 @@ const RMCPlantPage = () => {
     "/images/rmc_work/IMG-20260113-WA0019.jpg",
     "/images/rmc_work/IMG-20260113-WA0023.jpg",
   ];
+
+  const { galleryImages, leadership, staff } = useContent<{
+    galleryImages: typeof rmcGalleryImages;
+    leadership: Array<typeof rmcLeadership[number] & { photo?: string }>;
+    staff: Array<typeof rmcStaff[number] & { photo?: string }>;
+  }>("/content/rmc.json", {
+    galleryImages: rmcGalleryImages,
+    leadership: rmcLeadership,
+    staff: rmcStaff,
+  });
 
   return (
     <Layout>
@@ -194,7 +205,7 @@ const RMCPlantPage = () => {
             data-animate-targets="[data-rmc-gallery]"
             data-animate-stagger="0.05"
           >
-            {rmcGalleryImages.map((src, index) => (
+            {galleryImages.map((src, index) => (
               <div
                 key={src}
                 className="relative h-64 overflow-hidden rounded-lg border border-border group"
@@ -328,15 +339,24 @@ const RMCPlantPage = () => {
             data-animate-targets="[data-leader-card]"
             data-animate-stagger="0.08"
           >
-            {rmcLeadership.map((member) => (
+            {leadership.map((member) => (
               <div
                 key={member.name}
                 className="bg-card border border-border p-6 rounded-2xl"
                 data-leader-card
               >
-                <div className="aspect-[4/3] rounded-xl bg-muted flex items-center justify-center text-center text-sm text-muted-foreground mb-4">
-                  <span>Photo placeholder for {member.name}</span>
-                </div>
+                {member.photo ? (
+                  <img
+                    src={member.photo}
+                    alt={member.name}
+                    className="aspect-[4/3] w-full rounded-xl object-cover mb-4"
+                    loading="lazy"
+                  />
+                ) : (
+                  <div className="aspect-[4/3] rounded-xl bg-muted flex items-center justify-center text-center text-sm text-muted-foreground mb-4">
+                    <span>Photo placeholder for {member.name}</span>
+                  </div>
+                )}
                 <h3 className="font-semibold text-foreground mb-1">{member.name}</h3>
                 <p className="text-sm text-secondary mb-2">{member.role}</p>
                 <p className="text-sm text-muted-foreground">{member.focus}</p>
@@ -369,16 +389,25 @@ const RMCPlantPage = () => {
             data-animate-targets="[data-staff-card]"
             data-animate-stagger="0.08"
           >
-            {rmcStaff.map((staff) => (
-              <div key={staff.name} className="bg-card border border-dashed border-border p-6 rounded-xl" data-staff-card>
-                <div className="aspect-square rounded-lg bg-muted flex items-center justify-center text-center text-sm text-muted-foreground mb-4">
-                  <span>Photo placeholder</span>
-                </div>
-                <h3 className="font-semibold text-foreground">{staff.name}</h3>
-                <p className="text-sm text-secondary">{staff.role}</p>
+            {staff.map((staffMember) => (
+              <div key={staffMember.name} className="bg-card border border-dashed border-border p-6 rounded-xl" data-staff-card>
+                {staffMember.photo ? (
+                  <img
+                    src={staffMember.photo}
+                    alt={staffMember.name}
+                    className="aspect-square w-full rounded-lg object-cover mb-4"
+                    loading="lazy"
+                  />
+                ) : (
+                  <div className="aspect-square rounded-lg bg-muted flex items-center justify-center text-center text-sm text-muted-foreground mb-4">
+                    <span>Photo placeholder</span>
+                  </div>
+                )}
+                <h3 className="font-semibold text-foreground">{staffMember.name}</h3>
+                <p className="text-sm text-secondary">{staffMember.role}</p>
                 <div className="mt-3 text-sm text-muted-foreground">
-                  <p>{staff.note}</p>
-                  <p className="font-medium">{staff.shift}</p>
+                  {staffMember.note ? <p>{staffMember.note}</p> : null}
+                  <p className="font-medium">{staffMember.shift}</p>
                 </div>
               </div>
             ))}
