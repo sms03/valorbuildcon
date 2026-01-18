@@ -1,5 +1,6 @@
 import Layout from "@/components/layout/Layout";
 import { Shield, Target, HardHat } from "lucide-react";
+import { useContent } from "@/hooks/use-content";
 
 const pillars = [
   {
@@ -8,8 +9,6 @@ const pillars = [
     focus: "Vision & Leadership",
     description:
       "Guides Valor Buildcon's long-term strategy, forging partnerships and cultivating a culture of craftsmanship across every site we touch.",
-    icon: Shield,
-    photoAlt: "Virendra Anil Kate portrait placeholder",
   },
   {
     name: "Abhayraje Gangadhar Vinode",
@@ -17,8 +16,6 @@ const pillars = [
     focus: "Execution & Delivery",
     description:
       "Oversees civil execution, quality labs, and on-ground teams to ensure structures are delivered safely, precisely, and ahead of schedule.",
-    icon: Target,
-    photoAlt: "Abhayraje Gangadhar Vinode portrait placeholder",
   },
   {
     name: "Abhilash Tukaram Kalokhe",
@@ -26,12 +23,16 @@ const pillars = [
     focus: "Client Success",
     description:
       "Leads client engagements and translates complex design intents into actionable construction programs across RCC and RMC projects.",
-    icon: HardHat,
-    photoAlt: "Abhilash Tukaram Kalokhe portrait placeholder",
   },
 ];
 
+const pillarIcons = [Shield, Target, HardHat];
+
 const About = () => {
+  const { pillars: cmsPillars } = useContent<{
+    pillars: Array<typeof pillars[number] & { photo?: string }>;
+  }>("/content/about.json", { pillars });
+
   return (
     <Layout>
       <section
@@ -62,15 +63,27 @@ const About = () => {
         data-animate-stagger="0.12"
         data-animate-targets="[data-pillar-card]"
       >
-        {pillars.map(({ name, title, focus, description, icon: Icon, photoAlt }) => (
+        {cmsPillars.map(({ name, title, focus, description, photo }, index) => {
+          const Icon = pillarIcons[index % pillarIcons.length];
+          const photoAlt = `${name} portrait placeholder`;
+          return (
           <div
             key={name}
             className="bg-card border border-border rounded-2xl p-8 flex flex-col gap-4 shadow-sm"
             data-pillar-card
           >
-            <div className="aspect-square w-full rounded-2xl bg-muted flex items-center justify-center text-center text-sm text-muted-foreground">
-              <span>{photoAlt}</span>
-            </div>
+            {photo ? (
+              <img
+                src={photo}
+                alt={name}
+                className="aspect-square w-full rounded-2xl object-cover"
+                loading="lazy"
+              />
+            ) : (
+              <div className="aspect-square w-full rounded-2xl bg-muted flex items-center justify-center text-center text-sm text-muted-foreground">
+                <span>{photoAlt}</span>
+              </div>
+            )}
             <div className="h-14 w-14 rounded-full bg-primary/10 text-primary flex items-center justify-center">
               <Icon className="h-7 w-7" />
             </div>
@@ -81,7 +94,8 @@ const About = () => {
             </div>
             <p className="text-muted-foreground leading-relaxed flex-1">{description}</p>
           </div>
-        ))}
+          );
+        })}
       </section>
 
       <section className="container pb-16" data-animate="scale" data-animate-duration="1">
