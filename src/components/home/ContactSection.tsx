@@ -27,8 +27,8 @@ const contactInfo: ContactInfoItem[] = [
   {
     icon: Mail,
     title: "Email",
-    content: "info@valorbuildcon.com",
-    links: ["mailto:info@valorbuildcon.com"],
+    content: "valorbuildconllp@gmail.com",
+    links: ["mailto:valorbuildconllp@gmail.com"],
   },
   {
     icon: MapPin,
@@ -64,7 +64,7 @@ const ContactSection = () => {
       "Message:",
       formData.message,
     ];
-    const mailtoHref = `mailto:info@valorbuildcon.com?subject=${encodeURIComponent(
+    const mailtoHref = `mailto:valorbuildconllp@gmail.com?subject=${encodeURIComponent(
       subject,
     )}&body=${encodeURIComponent(bodyLines.join("\n"))}`;
     window.location.href = mailtoHref;
