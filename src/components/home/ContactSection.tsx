@@ -55,11 +55,23 @@ const ContactSection = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    const subject = `Contact Inquiry: ${formData.subject}`.trim();
+    const bodyLines = [
+      `Name: ${formData.name}`,
+      `Email: ${formData.email}`,
+      `Phone: ${formData.phone}`,
+      "",
+      "Message:",
+      formData.message,
+    ];
+    const mailtoHref = `mailto:info@valorbuildcon.com?subject=${encodeURIComponent(
+      subject,
+    )}&body=${encodeURIComponent(bodyLines.join("\n"))}`;
+    window.location.href = mailtoHref;
     toast({
-      title: "Message Sent!",
-      description: "Thank you for contacting us. We'll get back to you within 24 hours.",
+      title: "Email Client Opened",
+      description: "Your email client should open with your message. Please press send to complete the request.",
     });
-    setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
   };
   return (
     <section
