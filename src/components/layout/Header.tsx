@@ -126,9 +126,9 @@ const Header = () => {
                 <span>{number.label}</span>
               </a>
             ))}
-            <a href="mailto:info@valorbuildcon.com" className="flex items-center gap-2 hover:text-white transition-colors">
+            <a href="mailto:valorbuildconllp@gmail.com" className="flex items-center gap-2 hover:text-white transition-colors">
               <Mail className="h-4 w-4" />
-              <span>info@valorbuildcon.com</span>
+              <span>valorbuildconllp@gmail.com</span>
             </a>
           </div>
           <div className="text-xs sm:text-sm text-white/90 text-center sm:text-right">
