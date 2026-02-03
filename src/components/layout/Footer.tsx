@@ -7,7 +7,7 @@ const phoneNumbers = [
 ];
 
 const Footer = () => {
-  return <footer className="bg-primary text-primary-foreground">
+  return <footer className="bg-primary text-primary-foreground rounded-t-2xl">
       <div className="container py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Company Info */}
@@ -102,6 +102,10 @@ const Footer = () => {
             </div>
           </div>
         </div>
+      </div>
+      {/* Big Valor Buildcon LLP text at the very end */}
+      <div className="w-full flex justify-center items-center py-12">
+        <span className="text-[3rem] md:text-[5rem] font-extrabold tracking-tight text-primary-foreground/10 select-none" style={{letterSpacing: '0.05em', lineHeight: 1}}>Valor Buildcon LLP</span>
       </div>
     </footer>;
 };
