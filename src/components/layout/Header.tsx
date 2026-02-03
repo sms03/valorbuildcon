@@ -41,11 +41,11 @@ const Header = () => {
       path: "/rmc-plant"
     }]
   }, {
-    label: "About Us",
-    path: "/about"
-  }, {
     label: "Projects",
     path: "/projects"
+  }, {
+    label: "About Us",
+    path: "/about"
   }, {
     label: "Contact",
     path: "/#contact"
@@ -112,7 +112,7 @@ const Header = () => {
     syncHeaderHeight();
   }, [isMenuOpen, openMobileDropdown, syncHeaderHeight]);
 
-  return <header ref={headerRef} className="fixed top-0 left-0 right-0 z-50 bg-[hsl(34_33%_91%)] border-b border-border shadow-sm">
+  return <header ref={headerRef} className="fixed top-0 left-0 right-0 z-50 bg-[hsl(34_33%_91%)] border-b border-border shadow-sm rounded-b-2xl">
       <div className="bg-[hsl(355_34%_33%)] text-white border-b border-border/60 py-2">
         <div className="container flex flex-col gap-2 text-center text-sm sm:flex-row sm:items-center sm:justify-between">
           <div className="flex flex-wrap items-center justify-center gap-3 text-white/80 sm:justify-start sm:gap-6">
