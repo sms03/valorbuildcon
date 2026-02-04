@@ -2,8 +2,7 @@ import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 
 const phoneNumbers = [
-  { label: "+91 88558 60707", href: "tel:+918855860707" },
-  { label: "+91 77450 03646", href: "tel:+917745003646" },
+  { label: "Company number (Valor): 9607140999", href: "tel:+919607140999" },
 ];
 
 const Footer = () => {
