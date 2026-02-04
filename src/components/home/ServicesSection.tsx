@@ -19,19 +19,20 @@ const ServicesSection = () => {
 
   return (
     <section
-      className="py-20 bg-muted/30"
+      className="py-20 style={{ background: '#F0E9E0' }}"
       data-animate="fade-up"
       data-animate-duration="0.9"
     >
       <div className="container">
-        <div className="text-center mb-12" data-animate="fade-up" data-animate-delay="0.1">
+        <div className="text-left mb-12" data-animate="fade-up" data-animate-delay="0.1">
           <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 rounded">
             OUR SERVICES
           </div>
-          <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
+          <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-2">
             Comprehensive Construction Solutions
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <div className="w-16 h-1 bg-primary rounded mb-4" />
+          <p className="text-muted-foreground max-w-2xl">
             From structural RCC work to ready mix concrete supply, we provide end-to-end 
             construction services with quality and reliability.
           </p>
