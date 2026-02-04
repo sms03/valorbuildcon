@@ -52,11 +52,6 @@ const RMCPlantPage = () => {
     "Perfect Constructions",
   ];
 
-  const rmcLeadership = [
-    { name: "Virendra Anil Kate", role: "Founding Partner", focus: "Oversees overall RMC strategy and client relationships." },
-    { name: "Abhayraje Gangadhar Vinode", role: "Operations Partner", focus: "Leads batching performance, fleet readiness, and QA/QC routines." },
-    { name: "Abhilash Tukaram Kalokhe", role: "Projects Partner", focus: "Manages delivery schedules, billing, and coordination with developer sites." },
-  ];
 
   const rmcStaff = [
     { name: "Plant Team Member 01", role: "Plant Supervisor", note: "Name & portrait to be provided", shift: "Day Shift" },
@@ -75,13 +70,11 @@ const RMCPlantPage = () => {
     "/images/rmc_work/WhatsApp Image 2026-01-18 at 9.40.58 AM.jpeg",
   ];
 
-  const { galleryImages, leadership, staff } = useContent<{
+  const { galleryImages, staff } = useContent<{
     galleryImages: typeof rmcGalleryImages;
-    leadership: Array<typeof rmcLeadership[number] & { photo?: string }>;
     staff: Array<typeof rmcStaff[number] & { photo?: string }>;
   }>("/content/rmc.json", {
     galleryImages: rmcGalleryImages,
-    leadership: rmcLeadership,
     staff: rmcStaff,
   });
 
@@ -336,52 +329,6 @@ const RMCPlantPage = () => {
         </div>
       </section>
 
-      {/* Management Section */}
-      <section className="py-16 sm:py-20" style={{ background: '#F0E9E0' }}>
-        <div className="container">
-          <div className="text-left mb-12" data-animate="fade-up" data-animate-delay="0.1">
-            <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 rounded">
-              LEADERSHIP
-            </div>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-2">
-              Our Management Team
-            </h2>
-            <div className="w-16 h-1 bg-primary rounded mb-4" />
-          </div>
-
-          <div
-            className="grid grid-cols-1 md:grid-cols-3 gap-6"
-            data-animate="fade-up"
-            data-animate-delay="0.2"
-            data-animate-targets="[data-leader-card]"
-            data-animate-stagger="0.08"
-          >
-            {leadership.map((member) => (
-              <div
-                key={member.name}
-                className="bg-card border border-border p-5 sm:p-6 rounded-2xl"
-                data-leader-card
-              >
-                {member.photo ? (
-                  <img
-                    src={member.photo}
-                    alt={member.name}
-                    className="aspect-[4/3] w-full rounded-xl object-cover mb-4"
-                    loading="lazy"
-                  />
-                ) : (
-                  <div className="aspect-[4/3] rounded-xl bg-muted flex items-center justify-center text-center text-sm text-muted-foreground mb-4">
-                    <span>Photo placeholder for {member.name}</span>
-                  </div>
-                )}
-                <h3 className="font-semibold text-foreground mb-1">{member.name}</h3>
-                <p className="text-sm text-secondary mb-2">{member.role}</p>
-                <p className="text-sm text-muted-foreground">{member.focus}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* RMC Staff Placeholder Section */}
       <section className="py-16 sm:py-20 bg-background">
