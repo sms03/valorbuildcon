@@ -17,11 +17,52 @@ type NavItem = {
 };
 
 const phoneNumbers = [
-  { label: "+91 88558 60707", href: "tel:+918855860707" },
-  { label: "+91 77450 03646", href: "tel:+917745003646" },
+  { label: "Company number (Valor): 9607140999", href: "tel:+919607140999" },
 ];
 
 const Header = () => {
+      // Hide top bar on scroll down, show at top
+      useEffect(() => {
+        const topBar = document.getElementById("main-topbar");
+        let ticking = false;
+        function handleScroll() {
+          if (!topBar) return;
+          if (!ticking) {
+            window.requestAnimationFrame(() => {
+              if (window.scrollY > 10) {
+                topBar.classList.add("topbar-hide");
+              } else {
+                topBar.classList.remove("topbar-hide");
+              }
+              ticking = false;
+            });
+            ticking = true;
+          }
+        }
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+      }, []);
+    // Scroll trigger for shrinking navbar
+    useEffect(() => {
+      let lastScrollY = window.scrollY;
+      const navbar = document.getElementById("navbar");
+      const container = document.getElementById("navbar-container");
+      function onScroll() {
+        if (!navbar || !container) return;
+        if (window.scrollY > lastScrollY && window.scrollY > 30) {
+          // Scrolling down
+          navbar.classList.add("navbar-shrink");
+          container.classList.add("navbar-shrink-container");
+        } else {
+          // Scrolling up
+          navbar.classList.remove("navbar-shrink");
+          container.classList.remove("navbar-shrink-container");
+        }
+        lastScrollY = window.scrollY;
+      }
+      window.addEventListener("scroll", onScroll);
+      return () => window.removeEventListener("scroll", onScroll);
+    }, []);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openMobileDropdown, setOpenMobileDropdown] = useState<string | null>(null);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
@@ -46,9 +87,6 @@ const Header = () => {
   }, {
     label: "About Us",
     path: "/about"
-  }, {
-    label: "Contact",
-    path: "/#contact"
   }];
   const isActive = (path: string) => {
     if (path.startsWith("/#")) return false;
@@ -112,8 +150,8 @@ const Header = () => {
     syncHeaderHeight();
   }, [isMenuOpen, openMobileDropdown, syncHeaderHeight]);
 
-  return <header ref={headerRef} className="fixed top-0 left-0 right-0 z-50 bg-[hsl(34_33%_91%)] border-b border-border shadow-sm rounded-b-2xl">
-      <div className="bg-[hsl(355_34%_33%)] text-white border-b border-border/60 py-2">
+    return <header ref={headerRef} className="fixed top-0 left-0 right-0 z-50 bg-transparent border-b-0 shadow-none rounded-none pointer-events-none">
+      <div id="main-topbar" className="bg-[hsl(355_34%_33%)] text-white border-b border-border/60 py-2 topbar-transition">
         <div className="container flex flex-col gap-2 text-center text-sm sm:flex-row sm:items-center sm:justify-between">
           <div className="flex flex-wrap items-center justify-center gap-3 text-white/80 sm:justify-start sm:gap-6">
             {phoneNumbers.map((number) => (
@@ -131,14 +169,13 @@ const Header = () => {
               <span>valorbuildconllp@gmail.com</span>
             </a>
           </div>
-          <div className="text-xs sm:text-sm text-white/90 text-center sm:text-right">
-            Building Excellence Since 2010
-          </div>
+          <div className="text-xs sm:text-sm text-white/90 text-center sm:text-right" />
         </div>
       </div>
 
-      <div className="container py-5 lg:py-7">
-        <nav className="flex items-center justify-between gap-3">
+      <div className="container transition-all duration-300 py-5 lg:py-7 pointer-events-auto" id="navbar-container" style={{position:'relative',zIndex:2}}>
+        <nav className="flex items-center justify-between gap-3 rounded-full px-4 py-2 transition-all duration-300 navbar-pill" id="navbar" style={{position:'relative',zIndex:2}}>
+
           <Link to="/" className="flex items-center gap-2 min-w-0">
             <img
               src="/valor_logo.png"
@@ -146,7 +183,7 @@ const Header = () => {
               className="h-10 w-auto object-contain sm:h-12"
             />
             <div className="hidden sm:block">
-              <div className="font-semibold text-sky-500">Valor Buildcon LLP</div>
+              <div className="font-semibold navbar-lightblue">Valor Buildcon LLP</div>
               <div className="text-xs text-muted-foreground">Experience the Excellence</div>
             </div>
           </Link>
@@ -182,14 +219,23 @@ const Header = () => {
                     onMouseLeave={scheduleDropdownClose}
                   >
                     <div className="flex flex-col py-3">
-                      {item.children.map(child => <Link key={child.path} to={child.path} className="px-5 py-2 text-sm font-medium text-muted-foreground hover:text-primary hover:bg-muted/40 transition-colors">
+                      {item.children.map(child => <Link key={child.path} to={child.path} className="dropdown-link px-5 py-2 text-sm font-medium transition-colors">
                             {child.label}
                           </Link>)}
                     </div>
                   </div>
-                </div> : <Link key={item.path} to={item.path} className={cn("text-base font-semibold transition-colors hover:text-primary", isActive(item.path) ? "text-primary" : "text-muted-foreground")}>
+                </div> : <Link key={item.path} to={item.path} className={cn("text-base font-semibold transition-colors hover:text-primary", isActive(item.path) ? "text-primary" : "text-muted-foreground")}> 
                   {item.label}
                 </Link>)}
+
+            {/* Get a Quote pill button */}
+            <a
+              href="/#contact"
+              className="ml-2 rounded-full px-6 py-2 font-bold get-a-quote-btn bg-[#F0E9E0] border-2 border-[#F0E9E0] shadow-sm focus:outline-none focus:ring-2 focus:ring-[hsl(355_34%_33%)] focus:ring-offset-2"
+              style={{ whiteSpace: 'nowrap' }}
+            >
+              Get a Quote
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -223,6 +269,16 @@ const Header = () => {
                   </div> : <Link key={item.path} to={item.path} className={cn("text-base font-semibold transition-colors hover:text-primary py-2", isActive(item.path) ? "text-primary" : "text-muted-foreground")} onClick={() => setIsMenuOpen(false)}>
                     {item.label}
                   </Link>)}
+
+              {/* Get a Quote pill button for mobile */}
+              <a
+                href="/#contact"
+                className="mt-2 rounded-full px-6 py-2 font-bold get-a-quote-btn bg-[#F0E9E0] border-2 border-[#F0E9E0] shadow-sm focus:outline-none focus:ring-2 focus:ring-[hsl(355_34%_33%)] focus:ring-offset-2 text-center"
+                style={{ whiteSpace: 'nowrap', display: 'block' }}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Get a Quote
+              </a>
             </div>
           </div>}
       </div>
