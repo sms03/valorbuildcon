@@ -46,19 +46,21 @@ const Projects = () => {
   return (
     <Layout>
       <section
-        className="bg-muted/20 border-b border-border"
+        className="py-8 border-b border-border"
+        style={{ background: '#F0E9E0' }}
         data-animate="fade-up"
         data-animate-duration="1"
         data-animate-delay="0.1"
       >
-        <div className="container py-16 md:py-20 text-center space-y-6">
+        <div className="container max-w-3xl mx-auto space-y-6 text-left">
           <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium rounded">
             PROJECT SHOWCASE
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground">
+          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-2">
             Civil Works That Anchor Growth
           </h1>
-          <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
+          <div className="w-16 h-1 bg-primary rounded mb-4" />
+          <p className="text-muted-foreground text-lg max-w-3xl">
             Every Valor Buildcon engagement blends structural precision with site agility. Explore the RCC and RMC
             programs we have delivered for developers, industries, and public institutions across Gujarat.
           </p>
