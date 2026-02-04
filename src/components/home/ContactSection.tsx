@@ -6,8 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 
 const phoneNumbers = [
-  { label: "+91 88558 60707", href: "tel:+918855860707" },
-  { label: "+91 77450 03646", href: "tel:+917745003646" },
+  { label: "Company number (Valor): 9607140999", href: "tel:+919607140999" },
 ];
 
 type ContactInfoItem = {
@@ -34,7 +33,7 @@ const contactInfo: ContactInfoItem[] = [
     icon: MapPin,
     title: "Address",
     content: "JPCJ+323, Kate Wasti, Punawale, Pimpri-Chinchwad, Dattwadi, Maharashtra 411033",
-    links: ["https://maps.app.goo.gl/pH2chMFMZ5iY3uwz6"],
+    links: ["https://maps.app.goo.gl/JEMHjQtwniVveGkq7"],
   },
   {
     icon: Clock,
@@ -81,14 +80,15 @@ const ContactSection = () => {
       data-animate-duration="0.9"
     >
       <div className="container">
-        <div className="text-center mb-12" data-animate="fade-up" data-animate-delay="0.1">
+        <div className="text-left mb-12" data-animate="fade-up" data-animate-delay="0.1">
           <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 rounded">
             GET IN TOUCH
           </div>
-          <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
+          <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-2">
             Contact Us
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <div className="w-16 h-1 bg-primary rounded mb-4" />
+          <p className="text-muted-foreground max-w-2xl">
             Have a project in mind? Get in touch with us for a free consultation 
             and quote. Our team is ready to help you build your vision.
           </p>
@@ -231,7 +231,7 @@ const ContactSection = () => {
           data-animate-delay="0.35"
         >
           <iframe
-            src="https://www.google.com/maps?q=18.619755,73.730238&z=17&output=embed"
+            src="https://www.google.com/maps?output=embed&q=JPCJ%2B323%2C%20Kate%20Wasti%2C%20Punawale%2C%20Pimpri-Chinchwad%2C%20Dattwadi%2C%20Maharashtra%20411033"
             width="100%"
             height="400"
             style={{ border: 0 }}
