@@ -17,10 +17,10 @@ const partnerCompanies = [
 
 const AboutSection = () => {
   const stats = [
-    { value: "NA", label: "ISO Certificate Number" },
-    { value: "7 Years", label: "Hands-on Experience" },
+    { value: "In Process", label: "Certificates" },
     { value: "5+", label: "Projects Delivered / Upcoming" },
     { value: "10+", label: "Trusted Developer Partners" },
+    { value: "24/7", label: "Quality Monitoring" },
   ];
 
   const values = [
@@ -46,8 +46,8 @@ const AboutSection = () => {
               className="w-full h-[400px] lg:h-[500px] object-cover rounded-lg"
             />
             <div className="absolute -bottom-6 -right-6 bg-primary text-primary-foreground p-6 hidden md:block rounded-lg">
-              <div className="text-4xl font-bold">15+</div>
-              <div className="text-sm opacity-80">Years of Excellence</div>
+              <div className="text-2xl font-bold">Certificates</div>
+              <div className="text-sm opacity-80">ISO & QA Documentation</div>
             </div>
           </div>
 
@@ -60,10 +60,10 @@ const AboutSection = () => {
               Building India's Infrastructure With Expertise & Trust
             </h2>
             <p className="text-muted-foreground mb-6 leading-relaxed">
-              Valor Buildcon LLP is a Pune-based construction company with 7 years of on-ground
-              experience delivering high-quality RCC structural work and Ready Mix Concrete
-              solutions. We have delivered 5+ turnkey projects to date with additional scopes
-              currently underway across residential, commercial, and industrial segments.
+              Valor Buildcon LLP is a Pune-based construction company delivering high-quality RCC
+              structural work and Ready Mix Concrete solutions. We have delivered 5+ turnkey
+              projects to date with additional scopes currently underway across residential,
+              commercial, and industrial segments.
             </p>
             <p className="text-muted-foreground mb-8 leading-relaxed">
               Our state-of-the-art RMC plant, combined with our skilled workforce and 
@@ -73,8 +73,8 @@ const AboutSection = () => {
 
             <div className="space-y-3">
               {[
-                "ISO certificate number: NA (awaiting issuance)",
-                "7-year RCC + RMC delivery track across Pune Metropolitan Region",
+                "Certificates and ISO documentation in process",
+                "RCC + RMC delivery across Pune Metropolitan Region",
                 "5+ completed and upcoming scopes with rigorous QA/QC routines",
                 `Trusted by ${partnerCompanies.slice(0, 5).join(", ")}, and more regional developers`,
               ].map((item) => (
