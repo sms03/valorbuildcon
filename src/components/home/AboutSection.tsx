@@ -32,7 +32,7 @@ const AboutSection = () => {
   return (
     <section
       id="about"
-      className="py-20 bg-background"
+      className="py-16 sm:py-20 bg-background"
       data-animate="fade-up"
       data-animate-duration="0.9"
     >
@@ -43,7 +43,7 @@ const AboutSection = () => {
             <img 
               src={teamImage} 
               alt="Valor Buildcon team at construction site" 
-              className="w-full h-[400px] lg:h-[500px] object-cover rounded-lg"
+              className="w-full h-64 sm:h-[400px] lg:h-[500px] object-cover rounded-lg"
             />
             <div className="absolute -bottom-6 -right-6 bg-primary text-primary-foreground p-6 hidden md:block rounded-lg">
               <div className="text-2xl font-bold">Certificates</div>
@@ -56,7 +56,7 @@ const AboutSection = () => {
             <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 rounded">
               ABOUT VALOR BUILDCON
             </div>
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-6">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-6">
               Building India's Infrastructure With Expertise & Trust
             </h2>
             <p className="text-muted-foreground mb-6 leading-relaxed">
@@ -88,26 +88,26 @@ const AboutSection = () => {
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mt-12 sm:mt-16">
           {stats.map((stat, index) => (
             <div
               key={stat.label}
-              className="bg-card border border-border p-6 text-center rounded-lg"
+              className="bg-card border border-border p-4 sm:p-6 text-center rounded-lg"
               data-animate="fade-up"
               data-animate-delay={`${0.2 + index * 0.05}`}
             >
-              <div className="text-4xl font-bold text-primary mb-2">{stat.value}</div>
+              <div className="text-3xl sm:text-4xl font-bold text-primary mb-2">{stat.value}</div>
               <div className="text-sm text-muted-foreground">{stat.label}</div>
             </div>
           ))}
         </div>
 
         {/* Mission, Vision, Values */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12 sm:mt-16">
           {values.map((item, index) => (
             <div
               key={item.title}
-              className="bg-card border border-border p-8 rounded-lg"
+              className="bg-card border border-border p-6 sm:p-8 rounded-lg"
               data-animate="fade-up"
               data-animate-delay={`${0.35 + index * 0.08}`}
             >

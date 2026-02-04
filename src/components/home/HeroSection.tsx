@@ -10,8 +10,7 @@ const contactNumbers = [
 const HeroSection = () => {
   return (
     <section
-      className="relative min-h-[100vh] flex items-center py-16"
-      style={{marginTop: '-125px', zIndex: 1, position: 'relative'}}
+      className="relative min-h-[85vh] sm:min-h-[100vh] flex items-center py-12 sm:py-16 -mt-[90px] sm:-mt-[125px] z-[1]"
       data-animate="fade-up"
       data-animate-duration="1"
       data-animate-once="true"
@@ -38,10 +37,10 @@ const HeroSection = () => {
 
       {/* Content */}
       <div className="container relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-4">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 sm:gap-6 lg:gap-8">
           {/* Civil Work Section */}
           <div
-            className="bg-card/20 border border-border/30 p-6 sm:p-8 lg:p-12 flex flex-col justify-center rounded-lg backdrop-blur-sm"
+            className="bg-card/20 border border-border/30 p-5 sm:p-8 lg:p-12 flex flex-col justify-center rounded-lg backdrop-blur-sm"
             data-animate="fade-up"
             data-animate-delay="0.1"
           >
@@ -68,7 +67,7 @@ const HeroSection = () => {
 
           {/* RMC Plant Section */}
           <div
-            className="bg-card/20 border border-border/30 p-6 sm:p-8 lg:p-12 flex flex-col justify-center rounded-lg backdrop-blur-sm"
+            className="bg-card/20 border border-border/30 p-5 sm:p-8 lg:p-12 flex flex-col justify-center rounded-lg backdrop-blur-sm"
             data-animate="fade-up"
             data-animate-delay="0.2"
           >
@@ -96,7 +95,7 @@ const HeroSection = () => {
 
         {/* Contact Bar */}
         <div
-          className="mt-8 bg-primary text-primary-foreground p-5 sm:p-6 flex flex-col sm:flex-row items-center justify-between gap-4 rounded-lg"
+          className="mt-8 bg-primary text-primary-foreground p-4 sm:p-6 flex flex-col sm:flex-row items-center justify-between gap-4 rounded-lg"
           data-animate="fade-up"
           data-animate-delay="0.35"
         >
@@ -113,7 +112,7 @@ const HeroSection = () => {
                 size="lg"
                 className="w-full sm:w-auto"
               >
-                <a href={number.href} className="flex w-full items-center justify-center gap-2">
+                <a href={number.href} className="flex w-full items-center justify-center gap-2 text-sm sm:text-base leading-snug text-center">
                   <Phone className="h-5 w-5" />
                   {number.label}
                 </a>

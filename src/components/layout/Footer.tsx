@@ -7,8 +7,8 @@ const phoneNumbers = [
 
 const Footer = () => {
   return <footer className="bg-primary text-primary-foreground rounded-t-2xl">
-      <div className="container py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="container py-10 sm:py-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
           {/* Company Info */}
           <div>
             <div className="flex items-center gap-3 mb-6">
@@ -56,7 +56,7 @@ const Footer = () => {
             <ul className="space-y-4 text-sm">
               <li className="flex items-start gap-3">
                 <MapPin className="h-5 w-5 shrink-0 mt-0.5" />
-                <span className="opacity-80">
+                <span className="opacity-80 break-words">
                   JPCJ+323, Kate Wasti, Punawale, Pimpri-Chinchwad, Dattwadi, Maharashtra 411033<br />
                 </span>
               </li>
@@ -103,8 +103,8 @@ const Footer = () => {
         </div>
       </div>
       {/* Big Valor Buildcon LLP text at the very end */}
-      <div className="w-full flex justify-center items-center py-12">
-        <span className="text-[3rem] md:text-[5rem] font-extrabold tracking-tight text-primary-foreground/10 select-none" style={{letterSpacing: '0.05em', lineHeight: 1}}>Valor Buildcon LLP</span>
+      <div className="w-full flex justify-center items-center py-10 sm:py-12">
+        <span className="text-[2rem] sm:text-[3rem] md:text-[5rem] font-extrabold tracking-tight text-primary-foreground/10 select-none text-center px-4 leading-none" style={{letterSpacing: '0.05em'}}>Valor Buildcon LLP</span>
       </div>
     </footer>;
 };

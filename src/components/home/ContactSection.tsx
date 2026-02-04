@@ -75,7 +75,7 @@ const ContactSection = () => {
   return (
     <section
       id="contact"
-      className="py-20 bg-background"
+      className="py-16 sm:py-20 bg-background"
       data-animate="fade-up"
       data-animate-duration="0.9"
     >
@@ -84,7 +84,7 @@ const ContactSection = () => {
           <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 rounded">
             GET IN TOUCH
           </div>
-          <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-2">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-2">
             Contact Us
           </h2>
           <div className="w-16 h-1 bg-primary rounded mb-4" />
@@ -100,7 +100,7 @@ const ContactSection = () => {
             {contactInfo.map((item, index) => (
               <div
                 key={item.title}
-                className="flex items-start gap-4 p-4 bg-card border border-border hover:border-primary transition-colors rounded-lg"
+                className="flex flex-col sm:flex-row items-start gap-4 p-4 sm:p-5 bg-card border border-border hover:border-primary transition-colors rounded-lg"
                 data-animate="fade-up"
                 data-animate-delay={`${0.2 + index * 0.05}`}
               >
@@ -144,7 +144,7 @@ const ContactSection = () => {
 
           {/* Contact Form */}
           <div
-            className="lg:col-span-2 bg-card border border-border p-8 rounded-lg"
+            className="lg:col-span-2 bg-card border border-border p-6 sm:p-8 rounded-lg"
             data-animate="fade-left"
             data-animate-delay="0.25"
           >
@@ -239,7 +239,7 @@ const ContactSection = () => {
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
             title="Valor Buildcon Location"
-            className="w-full"
+            className="w-full h-64 sm:h-80 md:h-[400px]"
           />
         </div>
       </div>

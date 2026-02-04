@@ -46,7 +46,7 @@ const Projects = () => {
   return (
     <Layout>
       <section
-        className="py-8 border-b border-border"
+        className="py-6 sm:py-8 border-b border-border"
         style={{ background: '#F0E9E0' }}
         data-animate="fade-up"
         data-animate-duration="1"
@@ -56,20 +56,20 @@ const Projects = () => {
           <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium rounded">
             PROJECT SHOWCASE
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-2">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-2">
             Civil Works That Anchor Growth
           </h1>
           <div className="w-16 h-1 bg-primary rounded mb-4" />
-          <p className="text-muted-foreground text-lg max-w-3xl">
+          <p className="text-muted-foreground text-base sm:text-lg max-w-3xl">
             Every Valor Buildcon engagement blends structural precision with site agility. Explore the RCC and RMC
             programs we have delivered for developers, industries, and public institutions across Gujarat.
           </p>
         </div>
       </section>
 
-      <section className="container py-16 grid gap-8">
+      <section className="container py-12 sm:py-16 grid gap-8">
         <div
-          className="grid grid-cols-1 md:grid-cols-3 gap-6"
+          className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6"
           data-animate="fade-up"
           data-animate-delay="0.15"
           data-animate-targets="[data-stat-card]"
@@ -78,10 +78,10 @@ const Projects = () => {
           {stats.map(({ value, label, description }) => (
             <div
               key={label}
-              className="bg-card border border-border rounded-2xl p-6 shadow-sm space-y-3"
+              className="bg-card border border-border rounded-2xl p-5 sm:p-6 shadow-sm space-y-3"
               data-stat-card
             >
-              <p className="text-4xl font-semibold text-primary">{value}</p>
+              <p className="text-3xl sm:text-4xl font-semibold text-primary">{value}</p>
               <h3 className="text-lg font-medium text-foreground">{label}</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">{description}</p>
             </div>
@@ -89,7 +89,7 @@ const Projects = () => {
         </div>
 
         <div
-          className="grid grid-cols-1 md:grid-cols-3 gap-6"
+          className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6"
           data-animate="fade-up"
           data-animate-delay="0.25"
           data-animate-targets="[data-focus-card]"
@@ -118,25 +118,25 @@ const Projects = () => {
       <ProjectsSection />
 
       <section
-        className="container pb-20"
+        className="container pb-16 sm:pb-20"
         data-animate="scale"
         data-animate-duration="1"
         data-animate-delay="0.2"
       >
-        <div className="bg-primary text-primary-foreground rounded-3xl p-10 md:p-14 flex flex-col gap-6">
+        <div className="bg-primary text-primary-foreground rounded-3xl p-8 sm:p-10 md:p-14 flex flex-col gap-6">
           <div className="space-y-3">
             <p className="text-sm font-semibold tracking-wide uppercase text-primary-foreground/80">Ready to collaborate?</p>
-            <h3 className="text-3xl md:text-4xl font-semibold">Bring your next landmark to life with Valor Buildcon.</h3>
-            <p className="text-primary-foreground/90 text-lg">
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-semibold">Bring your next landmark to life with Valor Buildcon.</h3>
+            <p className="text-primary-foreground/90 text-base sm:text-lg">
               Share drawings, mix designs, or schedule requirements—our RCC and RMC specialists will revert with a
               build-ready engagement plan.
             </p>
           </div>
           <div className="flex flex-col sm:flex-row gap-4">
-            <Link to="/#contact" className="inline-flex items-center justify-center rounded-full bg-primary-foreground text-primary font-semibold px-6 py-3">
+            <Link to="/#contact" className="inline-flex items-center justify-center rounded-full bg-primary-foreground text-primary font-semibold px-6 py-3 w-full sm:w-auto">
               Discuss your project
             </Link>
-            <Link to="/rcc-work" className="inline-flex items-center justify-center rounded-full bg-primary/20 text-primary-foreground font-semibold px-6 py-3 border border-primary-foreground/20">
+            <Link to="/rcc-work" className="inline-flex items-center justify-center rounded-full bg-primary/20 text-primary-foreground font-semibold px-6 py-3 border border-primary-foreground/20 w-full sm:w-auto">
               Explore RCC capabilities
             </Link>
           </div>

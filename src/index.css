@@ -126,6 +126,28 @@
   }
 }
 
+@layer components {
+  .mobile-nav-panel {
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    border: 1.5px solid hsl(var(--primary));
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    box-shadow: 0 2px 16px 0 hsl(var(--primary) / 0.12);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+
+  .navbar-shrink + .mobile-nav-panel {
+    background: hsl(var(--primary) / 0.5);
+    border-color: hsl(var(--primary) / 0.7);
+    box-shadow: 0 2px 8px 0 hsl(var(--primary) / 0.12);
+    backdrop-filter: blur(12px) saturate(1.2);
+    -webkit-backdrop-filter: blur(12px) saturate(1.2);
+  }
+}
+
 @layer base {
   :root {
     --background: 34 33% 91%;

@@ -88,7 +88,7 @@ const RMCPlantPage = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="relative h-[60vh] flex items-center">
+      <section className="relative h-[50vh] sm:h-[60vh] flex items-center">
         <div className="absolute inset-0 z-0">
           <img src={rmcImage} alt="RMC Plant" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-foreground/70" />
@@ -98,10 +98,10 @@ const RMCPlantPage = () => {
             <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 rounded">
               READY MIX CONCRETE
             </div>
-            <h1 className="text-4xl lg:text-5xl font-bold text-background mb-4">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-background mb-4">
               Pune RMC Plant With 70 m³/hr Output
             </h1>
-            <p className="text-xl text-background/80 mb-6">
+            <p className="text-base sm:text-xl text-background/80 mb-6">
               Jambe Goan-based batching facility supplying consistent concrete within a
               30 km radius backed by disciplined logistics and QA/QC.
             </p>
@@ -116,13 +116,13 @@ const RMCPlantPage = () => {
       </section>
 
       {/* Plant Info Section */}
-      <section className="py-20 bg-background">
+      <section className="py-16 sm:py-20 bg-background">
         <div className="container">
           <div className="text-left mb-12" data-animate="fade-up" data-animate-delay="0.1">
             <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 rounded">
               PLANT INFORMATION
             </div>
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-2">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-2">
               Our RMC Plant Capacity
             </h2>
             <div className="w-16 h-1 bg-primary rounded mb-4" />
@@ -142,10 +142,10 @@ const RMCPlantPage = () => {
             {plantInfo.map((info, index) => (
               <div
                 key={index}
-                className="bg-card border border-border p-6 text-center rounded-lg"
+                className="bg-card border border-border p-4 sm:p-6 text-center rounded-lg"
                 data-plant-card
               >
-                <div className="text-2xl font-bold text-primary mb-2">{info.value}</div>
+                <div className="text-xl sm:text-2xl font-bold text-primary mb-2">{info.value}</div>
                 <div className="text-sm text-muted-foreground">{info.label}</div>
               </div>
             ))}
@@ -154,13 +154,13 @@ const RMCPlantPage = () => {
       </section>
 
       {/* Assets Section */}
-      <section className="py-20" style={{ background: '#F0E9E0' }}>
+      <section className="py-16 sm:py-20" style={{ background: '#F0E9E0' }}>
         <div className="container">
           <div className="text-left mb-12" data-animate="fade-up" data-animate-delay="0.1">
             <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 rounded">
               OUR ASSETS
             </div>
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-2">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-2">
               Equipment & Infrastructure
             </h2>
             <div className="w-16 h-1 bg-primary rounded mb-4" />
@@ -176,7 +176,7 @@ const RMCPlantPage = () => {
             {assets.map((asset, index) => (
               <div
                 key={index}
-                className="bg-card border border-border p-6 text-center rounded-lg"
+                className="bg-card border border-border p-5 sm:p-6 text-center rounded-lg"
                 data-rmc-asset
               >
                 <asset.icon className="h-12 w-12 text-secondary mx-auto mb-4" />
@@ -189,13 +189,13 @@ const RMCPlantPage = () => {
       </section>
 
       {/* Gallery Section */}
-      <section className="py-20 bg-background">
+      <section className="py-16 sm:py-20 bg-background">
         <div className="container">
           <div className="text-left mb-12" data-animate="fade-up" data-animate-delay="0.1">
             <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 rounded">
               PLANT GALLERY
             </div>
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-2">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-2">
               Concrete Production On Ground
             </h2>
             <div className="w-16 h-1 bg-primary rounded mb-4" />
@@ -214,7 +214,7 @@ const RMCPlantPage = () => {
             {galleryImages.map((src, index) => (
               <div
                 key={src}
-                className="relative h-64 overflow-hidden rounded-lg border border-border group"
+                className="relative h-52 sm:h-60 md:h-64 overflow-hidden rounded-lg border border-border group"
                 data-rmc-gallery
               >
                 <img
@@ -234,13 +234,13 @@ const RMCPlantPage = () => {
       </section>
 
       {/* RMC Work Section */}
-      <section className="py-20 bg-background">
+      <section className="py-16 sm:py-20 bg-background">
         <div className="container">
           <div className="text-left mb-12" data-animate="fade-up" data-animate-delay="0.1">
             <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 rounded">
               RMC WORK
             </div>
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-2">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-2">
               Ongoing Quality Consultancy (DCC Concrete Cons.)
             </h2>
             <div className="w-16 h-1 bg-primary rounded mb-4" />
@@ -251,7 +251,7 @@ const RMCPlantPage = () => {
           </div>
 
           <div
-            className="grid grid-cols-2 md:grid-cols-4 gap-6"
+            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6"
             data-animate="fade-up"
             data-animate-delay="0.2"
             data-animate-targets="[data-client-card]"
@@ -260,7 +260,7 @@ const RMCPlantPage = () => {
             {clients.map((client, index) => (
               <div
                 key={index}
-                className="bg-card border border-border p-6 text-center flex items-center justify-center h-24 rounded-lg"
+                className="bg-card border border-border p-5 sm:p-6 text-center flex items-center justify-center h-24 rounded-lg"
                 data-client-card
               >
                 <span className="font-medium text-foreground">{client}</span>
@@ -271,13 +271,13 @@ const RMCPlantPage = () => {
       </section>
 
       {/* Mix Design Section */}
-      <section className="py-20 bg-background">
+      <section className="py-16 sm:py-20 bg-background">
         <div className="container">
           <div className="text-left mb-12" data-animate="fade-up" data-animate-delay="0.1">
             <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 rounded">
               CONCRETE GRADES
             </div>
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-2">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-2">
               Mix Design Options
             </h2>
             <div className="w-16 h-1 bg-primary rounded mb-4" />
@@ -287,7 +287,7 @@ const RMCPlantPage = () => {
             </p>
           </div>
 
-          <div className="bg-card border border-dashed border-border rounded-2xl p-8 text-center" data-animate="fade-up" data-animate-delay="0.25">
+          <div className="bg-card border border-dashed border-border rounded-2xl p-6 sm:p-8 text-center" data-animate="fade-up" data-animate-delay="0.25">
             <p className="text-muted-foreground">
               Mix design catalogue pending. Share the grade-wise details to replace this panel with
               the finalized options (M10 to SCC / special mixes).
@@ -297,14 +297,14 @@ const RMCPlantPage = () => {
       </section>
 
       {/* Quality Control Section */}
-      <section className="py-20 bg-primary text-primary-foreground">
+      <section className="py-16 sm:py-20 bg-primary text-primary-foreground">
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div data-animate="fade-right" data-animate-delay="0.1">
               <div className="inline-block bg-primary-foreground/20 px-4 py-1 text-sm font-medium mb-4 rounded">
                 QUALITY ASSURANCE
               </div>
-              <h2 className="text-3xl lg:text-4xl font-bold mb-6">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-6">
                 Quality Control Lab
               </h2>
               <p className="opacity-80 mb-8">
@@ -330,20 +330,20 @@ const RMCPlantPage = () => {
               </div>
             </div>
             <div data-animate="fade-left" data-animate-delay="0.2">
-              <img src={qualityLab} alt="Quality Control Lab" className="w-full h-[400px] object-cover rounded-lg" />
+              <img src={qualityLab} alt="Quality Control Lab" className="w-full h-[300px] sm:h-[400px] object-cover rounded-lg" />
             </div>
           </div>
         </div>
       </section>
 
       {/* Management Section */}
-      <section className="py-20" style={{ background: '#F0E9E0' }}>
+      <section className="py-16 sm:py-20" style={{ background: '#F0E9E0' }}>
         <div className="container">
           <div className="text-left mb-12" data-animate="fade-up" data-animate-delay="0.1">
             <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 rounded">
               LEADERSHIP
             </div>
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-2">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-2">
               Our Management Team
             </h2>
             <div className="w-16 h-1 bg-primary rounded mb-4" />
@@ -359,7 +359,7 @@ const RMCPlantPage = () => {
             {leadership.map((member) => (
               <div
                 key={member.name}
-                className="bg-card border border-border p-6 rounded-2xl"
+                className="bg-card border border-border p-5 sm:p-6 rounded-2xl"
                 data-leader-card
               >
                 {member.photo ? (
@@ -384,13 +384,13 @@ const RMCPlantPage = () => {
       </section>
 
       {/* RMC Staff Placeholder Section */}
-      <section className="py-20 bg-background">
+      <section className="py-16 sm:py-20 bg-background">
         <div className="container">
           <div className="text-left mb-12" data-animate="fade-up" data-animate-delay="0.1">
             <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 rounded">
               OPERATIONS TEAM
             </div>
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-2">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-2">
               RMC Staff (Photos Coming Soon)
             </h2>
             <div className="w-16 h-1 bg-primary rounded mb-4" />
@@ -408,7 +408,7 @@ const RMCPlantPage = () => {
             data-animate-stagger="0.08"
           >
             {staff.map((staffMember) => (
-              <div key={staffMember.name} className="bg-card border border-dashed border-border p-6 rounded-xl" data-staff-card>
+              <div key={staffMember.name} className="bg-card border border-dashed border-border p-5 sm:p-6 rounded-xl" data-staff-card>
                 {staffMember.photo ? (
                   <img
                     src={staffMember.photo}
@@ -434,17 +434,17 @@ const RMCPlantPage = () => {
       </section>
 
       {/* Location & Contact Section */}
-      <section className="py-20 bg-background">
+      <section className="py-16 sm:py-20 bg-background">
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div data-animate="fade-right" data-animate-delay="0.1">
               <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 rounded">
                 LOCATION
               </div>
-              <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-6">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-6">
                 Plant Location
               </h2>
-              <div className="bg-muted h-[300px] flex items-center justify-center border border-border rounded-lg">
+              <div className="bg-muted h-[240px] sm:h-[300px] flex items-center justify-center border border-border rounded-lg">
                 <div className="text-center">
                   <MapPin className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
                   <p className="text-muted-foreground">Google Map</p>
@@ -459,7 +459,7 @@ const RMCPlantPage = () => {
               <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 rounded">
                 DELIVERY AREA
               </div>
-              <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-6">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-6">
                 30 km Supply Radius
               </h2>
               <p className="text-muted-foreground mb-6">
@@ -495,7 +495,7 @@ const RMCPlantPage = () => {
 
       {/* CTA Section */}
       <section
-        className="py-16 bg-secondary rounded-lg mx-4 mb-4"
+        className="py-12 sm:py-16 bg-secondary rounded-lg mx-3 sm:mx-4 mb-4"
         data-animate="scale"
         data-animate-duration="1"
         data-animate-delay="0.15"
@@ -503,21 +503,21 @@ const RMCPlantPage = () => {
         <div className="container">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="text-center md:text-left">
-              <h2 className="text-2xl lg:text-3xl font-bold text-secondary-foreground mb-2">
+              <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-secondary-foreground mb-2">
                 Need Quality Concrete?
               </h2>
               <p className="text-secondary-foreground/80">
                 Order now and get timely delivery to your construction site.
               </p>
             </div>
-            <div className="flex gap-4">
-              <Button asChild size="lg" variant="outline" className="border-secondary-foreground text-secondary-foreground hover:bg-secondary-foreground hover:text-secondary">
+            <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+              <Button asChild size="lg" variant="outline" className="border-secondary-foreground text-secondary-foreground hover:bg-secondary-foreground hover:text-secondary w-full sm:w-auto">
                 <a href="tel:+919607140999">
                   <Phone className="mr-2 h-5 w-5" />
                   Call Now
                 </a>
               </Button>
-              <Button asChild size="lg" className="bg-primary-foreground text-primary hover:bg-primary-foreground/90">
+              <Button asChild size="lg" className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 w-full sm:w-auto">
                 <Link to="/#contact">Request Quote</Link>
               </Button>
             </div>

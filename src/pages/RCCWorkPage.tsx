@@ -179,7 +179,7 @@ const CivilWorkPage = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="relative h-[60vh] flex items-center">
+      <section className="relative h-[50vh] sm:h-[60vh] flex items-center">
         <div className="absolute inset-0 z-0">
           <img src={civilWorkImage} alt="Civil work execution" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-foreground/70" />
@@ -189,10 +189,10 @@ const CivilWorkPage = () => {
             <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 rounded">
               CIVIL WORKS & INFRASTRUCTURE
             </div>
-            <h1 className="text-4xl lg:text-5xl font-bold text-background mb-4">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-background mb-4">
               Integrated Civil Construction & Infrastructure Services
             </h1>
-            <p className="text-xl text-background/80 mb-6">
+            <p className="text-base sm:text-xl text-background/80 mb-6">
               Pune-focused RCC and infrastructure partner delivering podiums, towers, and amenity blocks
               with disciplined QA/QC and on-ground coordination.
             </p>
@@ -207,13 +207,13 @@ const CivilWorkPage = () => {
       </section>
 
       {/* Services Section */}
-      <section className="py-20 bg-background">
+      <section className="py-16 sm:py-20 bg-background">
         <div className="container">
           <div className="text-left mb-12" data-animate="fade-up" data-animate-delay="0.1">
             <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 rounded">
               CIVIL SERVICES
             </div>
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-2">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-2">
               Civil Work & Infrastructure Services
             </h2>
             <div className="w-16 h-1 bg-primary rounded mb-4" />
@@ -232,7 +232,7 @@ const CivilWorkPage = () => {
             {civilServices.map((service, index) => (
               <div
                 key={index}
-                className="bg-card border border-border p-6 hover:border-primary transition-colors rounded-lg"
+                className="bg-card border border-border p-5 sm:p-6 hover:border-primary transition-colors rounded-lg"
                 data-service-card
               >
                 <service.icon className="h-10 w-10 text-secondary mb-4" />
@@ -244,13 +244,13 @@ const CivilWorkPage = () => {
         </div>
       </section>
 
-      <section className="py-20" style={{ background: '#F0E9E0' }}>
+      <section className="py-16 sm:py-20" style={{ background: '#F0E9E0' }}>
         <div className="container">
           <div className="text-left mb-12" data-animate="fade-up" data-animate-delay="0.1">
             <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 rounded">
               RCC SERVICES
             </div>
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-2">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-2">
               RCC Structural Works
             </h2>
             <div className="w-16 h-1 bg-primary rounded mb-4" />
@@ -269,7 +269,7 @@ const CivilWorkPage = () => {
             {rccServices.map((service, index) => (
               <div
                 key={index}
-                className="bg-card border border-border p-6 hover:border-primary transition-colors rounded-lg"
+                className="bg-card border border-border p-5 sm:p-6 hover:border-primary transition-colors rounded-lg"
                 data-rcc-card
               >
                 <service.icon className="h-10 w-10 text-secondary mb-4" />
@@ -282,13 +282,13 @@ const CivilWorkPage = () => {
       </section>
 
       {/* Projects Section */}
-      <section className="py-20" style={{ background: '#F0E9E0' }}>
+      <section className="py-16 sm:py-20" style={{ background: '#F0E9E0' }}>
         <div className="container">
           <div className="text-left mb-12" data-animate="fade-up" data-animate-delay="0.1">
             <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 rounded">
               PROJECT SHOWCASE
             </div>
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-2">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-2">
               RCC & Civil Work Highlights
             </h2>
             <div className="w-16 h-1 bg-primary rounded mb-4" />
@@ -296,7 +296,7 @@ const CivilWorkPage = () => {
 
           <div className="space-y-12">
             <div>
-              <h3 className="text-2xl font-semibold text-foreground mb-4">RCC Work - Completed</h3>
+              <h3 className="text-xl sm:text-2xl font-semibold text-foreground mb-4">RCC Work - Completed</h3>
               <div
                 className="grid grid-cols-1 md:grid-cols-2 gap-6"
                 data-animate="fade-up"
@@ -307,10 +307,10 @@ const CivilWorkPage = () => {
                 {cmsRccProjects.map((project, index) => (
                   <div
                     key={`${project.title}-${index}`}
-                    className="bg-card border border-border p-6 rounded-lg"
+                    className="bg-card border border-border p-5 sm:p-6 rounded-lg"
                     data-rcc-project-card
                   >
-                    <h4 className="text-xl font-semibold text-foreground mb-2">{project.title}</h4>
+                    <h4 className="text-lg sm:text-xl font-semibold text-foreground mb-2">{project.title}</h4>
                     <div className="flex flex-col text-muted-foreground text-sm gap-1">
                       <span className="flex items-center gap-2">
                         <MapPin className="h-4 w-4" />
@@ -325,7 +325,7 @@ const CivilWorkPage = () => {
             </div>
 
             <div>
-              <h3 className="text-2xl font-semibold text-foreground mb-4">RCC Materials Images</h3>
+              <h3 className="text-xl sm:text-2xl font-semibold text-foreground mb-4">RCC Materials Images</h3>
               <div
                 className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"
                 data-animate="fade-up"
@@ -336,7 +336,7 @@ const CivilWorkPage = () => {
                 {rccMaterialImages.map((src, index) => (
                   <div
                     key={`${src}-${index}`}
-                    className="relative h-64 overflow-hidden rounded-lg border border-border group"
+                    className="relative h-52 sm:h-60 md:h-64 overflow-hidden rounded-lg border border-border group"
                     data-rcc-gallery-card
                   >
                     <img
@@ -352,9 +352,9 @@ const CivilWorkPage = () => {
             </div>
 
             <div>
-              <h3 className="text-2xl font-semibold text-foreground mb-4">RCC Strength</h3>
+              <h3 className="text-xl sm:text-2xl font-semibold text-foreground mb-4">RCC Strength</h3>
               <div
-                className="bg-card border border-border p-6 rounded-lg"
+                className="bg-card border border-border p-5 sm:p-6 rounded-lg"
                 data-animate="fade-up"
                 data-animate-delay="0.3"
               >
@@ -370,7 +370,7 @@ const CivilWorkPage = () => {
             </div>
 
             <div>
-              <h3 className="text-2xl font-semibold text-foreground mb-4">Civil Work - Completed (Excavation)</h3>
+              <h3 className="text-xl sm:text-2xl font-semibold text-foreground mb-4">Civil Work - Completed (Excavation)</h3>
               <div
                 className="grid grid-cols-1 md:grid-cols-3 gap-6"
                 data-animate="fade-up"
@@ -381,10 +381,10 @@ const CivilWorkPage = () => {
                 {cmsCivilProjects.map((project, index) => (
                   <div
                     key={`${project.title}-${index}`}
-                    className="bg-card border border-border p-6 rounded-lg"
+                    className="bg-card border border-border p-5 sm:p-6 rounded-lg"
                     data-project-card
                   >
-                    <h4 className="text-xl font-semibold text-foreground mb-2">{project.title}</h4>
+                    <h4 className="text-lg sm:text-xl font-semibold text-foreground mb-2">{project.title}</h4>
                     <div className="flex flex-col text-muted-foreground text-sm gap-1">
                       <span className="flex items-center gap-2">
                         <MapPin className="h-4 w-4" />
@@ -399,7 +399,7 @@ const CivilWorkPage = () => {
             </div>
 
             <div>
-              <h3 className="text-2xl font-semibold text-foreground mb-4">Civil Work Images</h3>
+              <h3 className="text-xl sm:text-2xl font-semibold text-foreground mb-4">Civil Work Images</h3>
               <div
                 className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"
                 data-animate="fade-up"
@@ -410,7 +410,7 @@ const CivilWorkPage = () => {
                 {civilWorkImages.map((src, index) => (
                   <div
                     key={`${src}-${index}`}
-                    className="relative h-64 overflow-hidden rounded-lg border border-border group"
+                    className="relative h-52 sm:h-60 md:h-64 overflow-hidden rounded-lg border border-border group"
                     data-civil-gallery-card
                   >
                     <img
@@ -426,7 +426,7 @@ const CivilWorkPage = () => {
             </div>
 
             <div>
-              <h3 className="text-2xl font-semibold text-foreground mb-4">Machinery Strength</h3>
+              <h3 className="text-xl sm:text-2xl font-semibold text-foreground mb-4">Machinery Strength</h3>
               <p className="text-muted-foreground mb-6">
                 Machinery inventory supporting excavation, formwork, and RCC execution.
               </p>
@@ -440,7 +440,7 @@ const CivilWorkPage = () => {
                 {machineryStrengths.map((item, index) => (
                   <div
                     key={index}
-                    className="bg-card border border-border p-6 rounded-lg"
+                    className="bg-card border border-border p-5 sm:p-6 rounded-lg"
                     data-equipment-card
                   >
                     <div className="text-lg font-semibold text-foreground mb-2">{item.name}</div>
@@ -454,14 +454,14 @@ const CivilWorkPage = () => {
       </section>
 
       {/* Safety Measures Section */}
-      <section className="py-20 bg-primary text-primary-foreground">
+      <section className="py-16 sm:py-20 bg-primary text-primary-foreground">
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div data-animate="fade-right" data-animate-delay="0.1">
               <div className="inline-block bg-primary-foreground/20 px-4 py-1 text-sm font-medium mb-4 rounded">
                 SAFETY & QUALITY
               </div>
-              <h2 className="text-3xl lg:text-4xl font-bold mb-6">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-6">
                 Safety Practices On Every Civil Site
               </h2>
               <p className="opacity-80 mb-8">
@@ -477,20 +477,20 @@ const CivilWorkPage = () => {
               </div>
             </div>
             <div data-animate="fade-left" data-animate-delay="0.2">
-              <img src={teamImage} alt="Safety measures" className="w-full h-[400px] object-cover rounded-lg" />
+              <img src={teamImage} alt="Safety measures" className="w-full h-[300px] sm:h-[400px] object-cover rounded-lg" />
             </div>
           </div>
         </div>
       </section>
 
       {/* Leadership & Staff Section */}
-      <section className="py-20" style={{ background: '#F0E9E0' }}>
+      <section className="py-16 sm:py-20" style={{ background: '#F0E9E0' }}>
         <div className="container">
           <div className="text-left mb-12" data-animate="fade-up" data-animate-delay="0.1">
             <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 rounded">
               LEADERSHIP & STAFF
             </div>
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-2">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-2">
               Civil Leadership & Core Site Team
             </h2>
             <div className="w-16 h-1 bg-primary rounded mb-4" />
@@ -502,7 +502,7 @@ const CivilWorkPage = () => {
           <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-8 items-start">
             {leadMember ? (
               <div
-                className="bg-card border border-border rounded-2xl p-10"
+                className="bg-card border border-border rounded-2xl p-6 sm:p-8 lg:p-10"
                 data-animate="fade-up"
                 data-animate-delay="0.2"
               >
@@ -519,7 +519,7 @@ const CivilWorkPage = () => {
                   </div>
                 )}
                 <p className="text-sm font-semibold text-secondary mb-2">Civil Leadership</p>
-                <h3 className="text-3xl font-semibold text-foreground">{leadMember.name}</h3>
+                <h3 className="text-2xl sm:text-3xl font-semibold text-foreground">{leadMember.name}</h3>
                 <p className="text-primary font-medium mb-4">{leadMember.role}</p>
                 <p className="text-muted-foreground leading-relaxed">{leadMember.focus}</p>
               </div>
@@ -533,7 +533,7 @@ const CivilWorkPage = () => {
               data-animate-stagger="0.08"
             >
               {subMembers.map((member) => (
-                <div key={member.name} className="bg-card border border-border rounded-xl p-6" data-civil-team>
+                <div key={member.name} className="bg-card border border-border rounded-xl p-5 sm:p-6" data-civil-team>
                   <div className="flex items-center gap-4">
                     {member.photo ? (
                       <img
@@ -562,7 +562,7 @@ const CivilWorkPage = () => {
 
       {/* CTA Section */}
       <section
-        className="py-16 bg-secondary rounded-lg mx-4 mb-4"
+        className="py-12 sm:py-16 bg-secondary rounded-lg mx-3 sm:mx-4 mb-4"
         data-animate="scale"
         data-animate-duration="1"
         data-animate-delay="0.15"
@@ -570,21 +570,21 @@ const CivilWorkPage = () => {
         <div className="container">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="text-center md:text-left">
-              <h2 className="text-2xl lg:text-3xl font-bold text-secondary-foreground mb-2">
+              <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-secondary-foreground mb-2">
                 Need a Civil Execution Partner?
               </h2>
               <p className="text-secondary-foreground/80">
                 Let us plan site visits, cost options, and phasing strategies for your scope.
               </p>
             </div>
-            <div className="flex gap-4">
-              <Button asChild size="lg" variant="outline" className="border-secondary-foreground text-secondary-foreground hover:bg-secondary-foreground hover:text-secondary">
+            <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+              <Button asChild size="lg" variant="outline" className="border-secondary-foreground text-secondary-foreground hover:bg-secondary-foreground hover:text-secondary w-full sm:w-auto">
                 <a href="tel:+919607140999">
                   <Phone className="mr-2 h-5 w-5" />
                   Call Now
                 </a>
               </Button>
-              <Button asChild size="lg" className="bg-primary-foreground text-primary hover:bg-primary-foreground/90">
+              <Button asChild size="lg" className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 w-full sm:w-auto">
                 <Link to="/#contact">Get Quote</Link>
               </Button>
             </div>

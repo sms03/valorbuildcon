@@ -152,19 +152,19 @@ const Header = () => {
 
     return <header ref={headerRef} className="fixed top-0 left-0 right-0 z-50 bg-transparent border-b-0 shadow-none rounded-none pointer-events-none">
       <div id="main-topbar" className="bg-[hsl(355_34%_33%)] text-white border-b border-border/60 py-2 topbar-transition">
-        <div className="container flex flex-col gap-2 text-center text-sm sm:flex-row sm:items-center sm:justify-between">
-          <div className="flex flex-wrap items-center justify-center gap-3 text-white/80 sm:justify-start sm:gap-6">
+        <div className="container flex flex-col gap-2 text-center text-[12px] sm:text-sm sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex flex-wrap items-center justify-center gap-2 text-white/80 sm:justify-start sm:gap-6">
             {phoneNumbers.map((number) => (
               <a
                 key={number.href}
                 href={number.href}
-                className="flex items-center gap-2 hover:text-white transition-colors"
+                className="flex items-center gap-2 hover:text-white transition-colors leading-tight whitespace-normal"
               >
                 <Phone className="h-4 w-4" />
                 <span>{number.label}</span>
               </a>
             ))}
-            <a href="mailto:valorbuildconllp@gmail.com" className="flex items-center gap-2 hover:text-white transition-colors">
+            <a href="mailto:valorbuildconllp@gmail.com" className="flex items-center gap-2 hover:text-white transition-colors leading-tight whitespace-normal">
               <Mail className="h-4 w-4" />
               <span>valorbuildconllp@gmail.com</span>
             </a>
@@ -251,22 +251,22 @@ const Header = () => {
         </nav>
 
         {/* Mobile Navigation */}
-        {isMenuOpen && <div id="mobile-nav" className="lg:hidden py-4 border-t border-border mt-4">
+        {isMenuOpen && <div id="mobile-nav" className="lg:hidden mobile-nav-panel">
             <div className="flex flex-col gap-4 max-h-[calc(100vh-220px)] overflow-y-auto overscroll-contain pr-1">
               {navItems.map(item => "children" in item ? <div key={item.label} className="flex flex-col gap-2">
-                    <button type="button" className="flex items-center justify-between text-base font-semibold text-muted-foreground hover:text-primary transition-colors" onClick={() => setOpenMobileDropdown(openMobileDropdown === item.label ? null : item.label)}>
+                    <button type="button" className="flex items-center justify-between text-base font-semibold text-primary-foreground/80 hover:text-primary-foreground transition-colors" onClick={() => setOpenMobileDropdown(openMobileDropdown === item.label ? null : item.label)}>
                       <span>{item.label}</span>
                       <ChevronDown className={cn("h-4 w-4 transition-transform", openMobileDropdown === item.label && "rotate-180")}/>
                     </button>
                     {openMobileDropdown === item.label && <div className="pl-4 border-l border-border/50 flex flex-col gap-2">
-                        {item.children.map(child => <Link key={child.path} to={child.path} className={cn("text-base font-semibold transition-colors hover:text-primary", isActive(child.path) ? "text-primary" : "text-muted-foreground")} onClick={() => {
+                        {item.children.map(child => <Link key={child.path} to={child.path} className={cn("text-base font-semibold transition-colors hover:text-primary-foreground", isActive(child.path) ? "text-primary-foreground" : "text-primary-foreground/80")} onClick={() => {
                             setIsMenuOpen(false);
                             setOpenMobileDropdown(null);
                           }}>
                             {child.label}
                           </Link>)}
                       </div>}
-                  </div> : <Link key={item.path} to={item.path} className={cn("text-base font-semibold transition-colors hover:text-primary py-2", isActive(item.path) ? "text-primary" : "text-muted-foreground")} onClick={() => setIsMenuOpen(false)}>
+                  </div> : <Link key={item.path} to={item.path} className={cn("text-base font-semibold transition-colors hover:text-primary-foreground py-2", isActive(item.path) ? "text-primary-foreground" : "text-primary-foreground/80")} onClick={() => setIsMenuOpen(false)}>
                     {item.label}
                   </Link>)}
 

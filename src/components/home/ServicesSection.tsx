@@ -19,7 +19,8 @@ const ServicesSection = () => {
 
   return (
     <section
-      className="py-20 style={{ background: '#F0E9E0' }}"
+      className="py-16 sm:py-20"
+      style={{ background: '#F0E9E0' }}
       data-animate="fade-up"
       data-animate-duration="0.9"
     >
@@ -28,7 +29,7 @@ const ServicesSection = () => {
           <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 rounded">
             OUR SERVICES
           </div>
-          <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-2">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-2">
             Comprehensive Construction Solutions
           </h2>
           <div className="w-16 h-1 bg-primary rounded mb-4" />
@@ -45,7 +46,7 @@ const ServicesSection = () => {
             data-animate="fade-up"
             data-animate-delay="0.15"
           >
-            <div className="relative h-64 overflow-hidden">
+            <div className="relative h-48 sm:h-56 lg:h-64 overflow-hidden">
               <img 
                 src={rccImage} 
                 alt="RCC structural work" 
@@ -56,17 +57,17 @@ const ServicesSection = () => {
                 <h3 className="text-3xl font-bold text-background">Civil Work</h3>
               </div>
             </div>
-            <div className="p-8">
+            <div className="p-6 sm:p-8">
               <p className="text-muted-foreground mb-6">
                 Our expert team delivers superior Reinforced Cement Concrete structural 
                 work for all types of construction projects. We use premium materials and 
                 follow strict quality protocols.
               </p>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 mb-6">
                 {rccServices.map((service, index) => (
                   <div
                     key={service.title}
-                    className="text-center p-4 bg-muted/50 rounded-md"
+                    className="text-center p-3 sm:p-4 bg-muted/50 rounded-md"
                     data-animate="fade-up"
                     data-animate-delay={`${0.25 + index * 0.05}`}
                   >
@@ -91,7 +92,7 @@ const ServicesSection = () => {
             data-animate="fade-up"
             data-animate-delay="0.2"
           >
-            <div className="relative h-64 overflow-hidden">
+            <div className="relative h-48 sm:h-56 lg:h-64 overflow-hidden">
               <img 
                 src={rmcImage} 
                 alt="RMC Plant facility" 
@@ -102,17 +103,17 @@ const ServicesSection = () => {
                 <h3 className="text-3xl font-bold text-background">RMC Plant</h3>
               </div>
             </div>
-            <div className="p-8">
+            <div className="p-6 sm:p-8">
               <p className="text-muted-foreground mb-6">
                 Our state-of-the-art Ready Mix Concrete plant produces high-quality 
                 concrete with precise mix designs. We ensure consistent quality and 
                 timely delivery to construction sites.
               </p>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 mb-6">
                 {rmcServices.map((service, index) => (
                   <div
                     key={service.title}
-                    className="text-center p-4 bg-muted/50 rounded-md"
+                    className="text-center p-3 sm:p-4 bg-muted/50 rounded-md"
                     data-animate="fade-up"
                     data-animate-delay={`${0.35 + index * 0.05}`}
                   >

@@ -40,7 +40,7 @@ const ProjectsSection = () => {
   return (
     <section
       id="projects"
-      className="py-20 bg-background"
+      className="py-16 sm:py-20 bg-background"
       data-animate="fade-up"
       data-animate-duration="0.9"
     >
@@ -49,7 +49,7 @@ const ProjectsSection = () => {
           <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 rounded">
             OUR PORTFOLIO
           </div>
-          <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-2">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-2">
             Featured Projects
           </h2>
           <div className="w-16 h-1 bg-primary rounded mb-4" />
@@ -59,7 +59,7 @@ const ProjectsSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {projects.map((project, index) => (
             <div 
               key={project.title}
@@ -67,18 +67,18 @@ const ProjectsSection = () => {
               data-animate="fade-up"
               data-animate-delay={`${0.15 + index * 0.08}`}
             >
-              <div className="relative h-64 overflow-hidden">
+              <div className="relative h-52 sm:h-60 lg:h-64 overflow-hidden">
                 <img 
                   src={project.image} 
                   alt={project.title} 
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute top-4 left-4 bg-primary text-primary-foreground px-3 py-1 text-sm font-medium rounded">
+                <div className="absolute top-4 left-4 bg-primary text-primary-foreground px-3 py-1 text-xs sm:text-sm font-medium rounded">
                   {project.type}
                 </div>
               </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-foreground mb-3">
+              <div className="p-5 sm:p-6">
+                <h3 className="text-lg sm:text-xl font-semibold text-foreground mb-3">
                   {project.title}
                 </h3>
                 <div className="space-y-2 text-sm text-muted-foreground">

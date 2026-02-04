@@ -23,7 +23,8 @@ const TestimonialsSection = () => {
 
   return (
     <section
-      className="py-20 style={{ background: '#F0E9E0' }}"
+      className="py-16 sm:py-20"
+      style={{ background: '#F0E9E0' }}
       data-animate="fade-up"
       data-animate-duration="0.9"
     >
@@ -32,7 +33,7 @@ const TestimonialsSection = () => {
           <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 rounded">
             TRUSTED PARTNERS
           </div>
-          <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-2">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-2">
             Companies We Have Worked With
           </h2>
           <div className="w-16 h-1 bg-primary rounded mb-4" />
