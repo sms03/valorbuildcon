@@ -8,7 +8,6 @@ import {
   HardHat, 
   Ruler,
   Phone,
-  ArrowRight,
   MapPin
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -18,21 +17,11 @@ import teamImage from "@/assets/team-work.jpg";
 import { useContent } from "@/hooks/use-content";
 
 const CivilWorkPage = () => {
-  const services = [
-    {
-      icon: Building2,
-      title: "Residential RCC Frames",
-      description: "G+20 structural frames, podium slabs, and amenity blocks executed across Pune's western corridor.",
-    },
-    {
-      icon: Layers,
-      title: "Commercial Podiums & Basements",
-      description: "Post-tension slabs, parking decks, and waterproof podiums for mixed-use campuses.",
-    },
+  const civilServices = [
     {
       icon: Shield,
-      title: "Drainage & Utility Corridors",
-      description: "UG drainage, rainwater harvesting pits, and utility sleeves for large-format townships.",
+      title: "Excavation & Site Development",
+      description: "Site clearing, excavation, and formation work for township and commercial developments.",
     },
     {
       icon: Ruler,
@@ -51,11 +40,22 @@ const CivilWorkPage = () => {
     },
   ];
 
-  const howWeWork = [
-    { step: "01", title: "Needs Assessment", description: "Detailed site study, geotech inputs, and compliance requirements." },
-    { step: "02", title: "Design Coordination", description: "Working with architects and consultants to finalize buildable details." },
-    { step: "03", title: "Execution & Monitoring", description: "Daily progress tracking with QA/QC labs and digital reporting." },
-    { step: "04", title: "Handover & Support", description: "Commissioning, documentation, and post-handover maintenance plans." },
+  const rccServices = [
+    {
+      icon: Building2,
+      title: "Residential RCC Frames",
+      description: "RCC frames, podium slabs, and amenity blocks executed across Pune's growth corridors.",
+    },
+    {
+      icon: Layers,
+      title: "Commercial Podiums & Basements",
+      description: "Parking decks, waterproof podiums, and service basements for mixed-use campuses.",
+    },
+    {
+      icon: Shield,
+      title: "Structural Columns & Beams",
+      description: "Precision RCC framing with consistent QA/QC and pour sequencing.",
+    },
   ];
 
   const safetyMeasures = [
@@ -67,7 +67,14 @@ const CivilWorkPage = () => {
     "Joint safety and quality audits with clients and consultants",
   ];
 
-  const equipmentList = [
+  const materialTypes = [
+    "Cement (OPC/PPC)",
+    "Manufactured sand (M-sand)",
+    "20 mm & 10 mm aggregates",
+    "Admixtures & waterproofing compounds",
+  ];
+
+  const machineryStrengths = [
     { name: "Steel & Aluminum Formwork", detail: "12+ modular shuttering sets for towers and podiums" },
     { name: "Concrete Vibrators & Screeds", detail: "18 units covering slabs, cores, and podium decks" },
     { name: "Rebar Cutting & Bending Machines", detail: "4 automated stations for faster steel cycles" },
@@ -76,10 +83,15 @@ const CivilWorkPage = () => {
     { name: "Transit Mixers & Pumps", detail: "15+ mixers and 4 pumps paired with in-house RMC plant" },
   ];
 
-  const projects = [
-    { image: "/images/civil_rcc_work/IMG-20260113-WA0000.jpg", title: "Life Republic Podium Works", location: "Hinjawadi, Pune", company: "Kolte Patil Life Republic" },
-    { image: "/images/civil_rcc_work/IMG-20260113-WA0001.jpg", title: "Legacy Avenue RCC Shells", location: "Pimpri-Chinchwad", company: "Legacy Life Spaces" },
-    { image: "/images/civil_rcc_work/IMG-20260113-WA0002.jpg", title: "Commercial Utility Upgrade", location: "Baner, Pune", company: "Millennium Developers" },
+  const civilProjects = [
+    { title: "Legacy Milestone", location: "Punawale", scope: "Excavation", status: "Completed" },
+    { title: "Vilas Jawadekar", location: "Kate Wasti", scope: "Excavation", status: "Completed" },
+    { title: "18 Magnitude", location: "Punawale", scope: "Excavation", status: "Completed" },
+  ];
+
+  const rccProjects = [
+    { title: "Poodar School", location: "Punawale", scope: "RCC Work", status: "Completed" },
+    { title: "DY Patil", location: "Ravet", scope: "RCC Work", status: "Completed" },
   ];
 
   const civilGalleryImages = [
@@ -116,26 +128,38 @@ const CivilWorkPage = () => {
 
   const civilTeam = [
     {
-      name: "Mahesh Chavre",
-      role: "Civil Delivery Lead",
-      focus: "Leads RCC execution, crew deployment, and coordination with consultants across all active projects.",
+      name: "Vishwajit Biswas",
+      role: "Engineer",
+      focus: "Handles site execution, safety, and day-to-day coordination across civil scopes.",
     },
     {
-      name: "Vishwajit Biswas",
-      role: "Senior Site Manager",
-      focus: "Oversees day-to-day site safety, QA/QC logs, and contractor interfaces for township scopes.",
+      name: "Mahesh Chowre",
+      role: "Engineer",
+      focus: "Manages RCC activity planning, contractor coordination, and site reporting.",
+    },
+    {
+      name: "Girish Desai",
+      role: "Technical Head",
+      focus: "Leads technical approvals, QA/QC standards, and execution methodology across projects.",
     },
   ];
 
-  const { projects: cmsProjects, galleryImages, team } = useContent<{
-    projects: typeof projects;
+  const { civilProjects: cmsCivilProjects, rccProjects: cmsRccProjects, galleryImages, team } = useContent<{
+    civilProjects: typeof civilProjects;
+    rccProjects: typeof rccProjects;
     galleryImages: typeof civilGalleryImages;
     team: Array<typeof civilTeam[number] & { photo?: string }>;
   }>("/content/rcc.json", {
-    projects,
+    civilProjects,
+    rccProjects,
     galleryImages: civilGalleryImages,
     team: civilTeam,
   });
+
+  const rccMaterialImages = galleryImages.slice(0, 8);
+  const civilWorkImages = galleryImages.slice(8);
+  const leadMember = team.find((member) => member.name === "Girish Desai") ?? team[0];
+  const subMembers = team.filter((member) => member.name !== leadMember?.name);
 
   return (
     <Layout>
@@ -154,11 +178,11 @@ const CivilWorkPage = () => {
               Integrated Civil Construction & Infrastructure Services
             </h1>
             <p className="text-xl text-background/80 mb-6">
-              Pune-focused RCC and infrastructure partner with 7 years of execution experience,
-              delivering podiums, towers, and amenity blocks with disciplined QA/QC.
+              Pune-focused RCC and infrastructure partner delivering podiums, towers, and amenity blocks
+              with disciplined QA/QC and on-ground coordination.
             </p>
             <Button asChild size="lg" variant="secondary">
-              <a href="tel:+918855860707">
+              <a href="tel:+919607140999">
                 <Phone className="mr-2 h-5 w-5" />
                 Book Site Visit
               </a>
@@ -170,14 +194,15 @@ const CivilWorkPage = () => {
       {/* Services Section */}
       <section className="py-20 bg-background">
         <div className="container">
-          <div className="text-center mb-12" data-animate="fade-up" data-animate-delay="0.1">
+          <div className="text-left mb-12" data-animate="fade-up" data-animate-delay="0.1">
             <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 rounded">
               CIVIL SERVICES
             </div>
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
+            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-2">
               Civil Work & Infrastructure Services
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+            <div className="w-16 h-1 bg-primary rounded mb-4" />
+            <p className="text-muted-foreground max-w-2xl text-left">
               Comprehensive RCC, podium, and infrastructure contracting packages tailored for Pune's leading developers and industries.
             </p>
           </div>
@@ -189,7 +214,7 @@ const CivilWorkPage = () => {
             data-animate-stagger="0.08"
             data-animate-targets="[data-service-card]"
           >
-            {services.map((service, index) => (
+            {civilServices.map((service, index) => (
               <div
                 key={index}
                 className="bg-card border border-border p-6 hover:border-primary transition-colors rounded-lg"
@@ -204,129 +229,211 @@ const CivilWorkPage = () => {
         </div>
       </section>
 
-      {/* Projects Section */}
-      <section className="py-20 bg-muted/30">
+      <section className="py-20" style={{ background: '#F0E9E0' }}>
         <div className="container">
-          <div className="text-center mb-12" data-animate="fade-up" data-animate-delay="0.1">
+          <div className="text-left mb-12" data-animate="fade-up" data-animate-delay="0.1">
             <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 rounded">
-              PROJECT SHOWCASE
+              RCC SERVICES
             </div>
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
-              Recent Civil Engagements
+            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-2">
+              RCC Structural Works
             </h2>
-          </div>
-
-          <div
-            className="grid grid-cols-1 md:grid-cols-3 gap-8"
-            data-animate="fade-up"
-            data-animate-delay="0.2"
-            data-animate-stagger="0.1"
-            data-animate-targets="[data-project-card]"
-          >
-            {cmsProjects.map((project, index) => (
-              <div
-                key={index}
-                className="bg-card border border-border overflow-hidden group rounded-lg"
-                data-project-card
-              >
-                <div className="relative h-64 overflow-hidden">
-                  <img 
-                    src={project.image} 
-                    alt={project.title} 
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold text-foreground mb-2">{project.title}</h3>
-                  <div className="flex flex-col text-muted-foreground text-sm gap-1">
-                    <span className="flex items-center gap-2">
-                      <MapPin className="h-4 w-4" />
-                      {project.location}
-                    </span>
-                    <span className="font-medium">{project.company}</span>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Gallery Section */}
-      <section className="py-20 bg-background">
-        <div className="container">
-          <div className="text-center mb-12" data-animate="fade-up" data-animate-delay="0.1">
-            <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 rounded">
-              SITE GALLERY
-            </div>
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
-              Civil Execution In Progress
-            </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Real-time captures from the latest roadwork, drain upgrades, and industrial civil scopes handled by our teams.
+            <div className="w-16 h-1 bg-primary rounded mb-4" />
+            <p className="text-muted-foreground max-w-2xl text-left">
+              RCC execution packages with disciplined shuttering, reinforcement, and pour sequencing.
             </p>
           </div>
 
           <div
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
             data-animate="fade-up"
             data-animate-delay="0.2"
-            data-animate-targets="[data-gallery-card]"
-            data-animate-stagger="0.05"
+            data-animate-stagger="0.08"
+            data-animate-targets="[data-rcc-card]"
           >
-            {galleryImages.map((src, index) => (
+            {rccServices.map((service, index) => (
               <div
-                key={src}
-                className="relative h-64 overflow-hidden rounded-lg border border-border group"
-                data-gallery-card
+                key={index}
+                className="bg-card border border-border p-6 hover:border-primary transition-colors rounded-lg"
+                data-rcc-card
               >
-                <img
-                  src={src}
-                  alt={`Civil work photo ${index + 1}`}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-foreground/5 group-hover:bg-foreground/20 transition-colors" />
-                <div className="absolute bottom-4 left-4 text-xs font-medium text-background bg-foreground/60 px-3 py-1 rounded-full">
-                  {`Site Capture ${String(index + 1).padStart(2, "0")}`}
-                </div>
+                <service.icon className="h-10 w-10 text-secondary mb-4" />
+                <h3 className="text-xl font-semibold text-foreground mb-2">{service.title}</h3>
+                <p className="text-muted-foreground">{service.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* How We Work Section */}
-      <section className="py-20 bg-background">
+      {/* Projects Section */}
+      <section className="py-20" style={{ background: '#F0E9E0' }}>
         <div className="container">
-          <div className="text-center mb-12" data-animate="fade-up" data-animate-delay="0.1">
+          <div className="text-left mb-12" data-animate="fade-up" data-animate-delay="0.1">
             <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 rounded">
-              DELIVERY APPROACH
+              PROJECT SHOWCASE
             </div>
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
-              How We Deliver Civil Works
+            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-2">
+              RCC & Civil Work Highlights
             </h2>
+            <div className="w-16 h-1 bg-primary rounded mb-4" />
           </div>
 
-          <div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
-            data-animate="fade-up"
-            data-animate-delay="0.2"
-            data-animate-targets="[data-process-card]"
-            data-animate-stagger="0.08"
-          >
-            {howWeWork.map((item, index) => (
-              <div key={index} className="relative" data-process-card>
-                <div className="bg-card border border-border p-6 h-full rounded-lg">
-                  <div className="text-4xl font-bold text-secondary/30 mb-4">{item.step}</div>
-                  <h3 className="text-xl font-semibold text-foreground mb-2">{item.title}</h3>
-                  <p className="text-muted-foreground">{item.description}</p>
-                </div>
-                {index < howWeWork.length - 1 && (
-                  <ArrowRight className="hidden lg:block absolute top-1/2 -right-4 transform -translate-y-1/2 h-8 w-8 text-muted" />
-                )}
+          <div className="space-y-12">
+            <div>
+              <h3 className="text-2xl font-semibold text-foreground mb-4">RCC Work - Completed</h3>
+              <div
+                className="grid grid-cols-1 md:grid-cols-2 gap-6"
+                data-animate="fade-up"
+                data-animate-delay="0.2"
+                data-animate-stagger="0.1"
+                data-animate-targets="[data-rcc-project-card]"
+              >
+                {cmsRccProjects.map((project, index) => (
+                  <div
+                    key={`${project.title}-${index}`}
+                    className="bg-card border border-border p-6 rounded-lg"
+                    data-rcc-project-card
+                  >
+                    <h4 className="text-xl font-semibold text-foreground mb-2">{project.title}</h4>
+                    <div className="flex flex-col text-muted-foreground text-sm gap-1">
+                      <span className="flex items-center gap-2">
+                        <MapPin className="h-4 w-4" />
+                        {project.location}
+                      </span>
+                      <span className="font-medium">{project.scope}</span>
+                      <span>{project.status}</span>
+                    </div>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
+
+            <div>
+              <h3 className="text-2xl font-semibold text-foreground mb-4">RCC Materials Images</h3>
+              <div
+                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"
+                data-animate="fade-up"
+                data-animate-delay="0.25"
+                data-animate-targets="[data-rcc-gallery-card]"
+                data-animate-stagger="0.05"
+              >
+                {rccMaterialImages.map((src, index) => (
+                  <div
+                    key={`${src}-${index}`}
+                    className="relative h-64 overflow-hidden rounded-lg border border-border group"
+                    data-rcc-gallery-card
+                  >
+                    <img
+                      src={src}
+                      alt={`RCC material image ${index + 1}`}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-foreground/5 group-hover:bg-foreground/20 transition-colors" />
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <h3 className="text-2xl font-semibold text-foreground mb-4">RCC Strength</h3>
+              <div
+                className="bg-card border border-border p-6 rounded-lg"
+                data-animate="fade-up"
+                data-animate-delay="0.3"
+              >
+                <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {materialTypes.map((item) => (
+                    <li key={item} className="flex items-start gap-3 text-muted-foreground">
+                      <CheckCircle className="h-5 w-5 text-secondary shrink-0 mt-0.5" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            <div>
+              <h3 className="text-2xl font-semibold text-foreground mb-4">Civil Work - Completed (Excavation)</h3>
+              <div
+                className="grid grid-cols-1 md:grid-cols-3 gap-6"
+                data-animate="fade-up"
+                data-animate-delay="0.35"
+                data-animate-stagger="0.1"
+                data-animate-targets="[data-project-card]"
+              >
+                {cmsCivilProjects.map((project, index) => (
+                  <div
+                    key={`${project.title}-${index}`}
+                    className="bg-card border border-border p-6 rounded-lg"
+                    data-project-card
+                  >
+                    <h4 className="text-xl font-semibold text-foreground mb-2">{project.title}</h4>
+                    <div className="flex flex-col text-muted-foreground text-sm gap-1">
+                      <span className="flex items-center gap-2">
+                        <MapPin className="h-4 w-4" />
+                        {project.location}
+                      </span>
+                      <span className="font-medium">{project.scope}</span>
+                      <span>{project.status}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <h3 className="text-2xl font-semibold text-foreground mb-4">Civil Work Images</h3>
+              <div
+                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"
+                data-animate="fade-up"
+                data-animate-delay="0.4"
+                data-animate-targets="[data-civil-gallery-card]"
+                data-animate-stagger="0.05"
+              >
+                {civilWorkImages.map((src, index) => (
+                  <div
+                    key={`${src}-${index}`}
+                    className="relative h-64 overflow-hidden rounded-lg border border-border group"
+                    data-civil-gallery-card
+                  >
+                    <img
+                      src={src}
+                      alt={`Civil work image ${index + 1}`}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-foreground/5 group-hover:bg-foreground/20 transition-colors" />
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <h3 className="text-2xl font-semibold text-foreground mb-4">Machinery Strength</h3>
+              <p className="text-muted-foreground mb-6">
+                Machinery inventory supporting excavation, formwork, and RCC execution.
+              </p>
+              <div
+                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+                data-animate="fade-up"
+                data-animate-delay="0.45"
+                data-animate-targets="[data-equipment-card]"
+                data-animate-stagger="0.06"
+              >
+                {machineryStrengths.map((item, index) => (
+                  <div
+                    key={index}
+                    className="bg-card border border-border p-6 rounded-lg"
+                    data-equipment-card
+                  >
+                    <div className="text-lg font-semibold text-foreground mb-2">{item.name}</div>
+                    <p className="text-sm text-muted-foreground">{item.detail}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -361,80 +468,79 @@ const CivilWorkPage = () => {
         </div>
       </section>
 
-      {/* Assets Section */}
-      <section className="py-20 bg-background">
-        <div className="container">
-          <div className="text-center mb-12" data-animate="fade-up" data-animate-delay="0.1">
-            <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 rounded">
-              CAPACITY & REACH
-            </div>
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
-              Civil Machines & Tools In-House
-            </h2>
-          </div>
-
-          <div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-            data-animate="fade-up"
-            data-animate-delay="0.2"
-            data-animate-targets="[data-equipment-card]"
-            data-animate-stagger="0.06"
-          >
-            {equipmentList.map((item, index) => (
-              <div
-                key={index}
-                className="bg-card border border-border p-6 rounded-lg"
-                data-equipment-card
-              >
-                <div className="text-lg font-semibold text-foreground mb-2">{item.name}</div>
-                <p className="text-sm text-muted-foreground">{item.detail}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Leadership & Staff Section */}
-      <section className="py-20 bg-muted/30">
+      <section className="py-20" style={{ background: '#F0E9E0' }}>
         <div className="container">
-          <div className="text-center mb-12" data-animate="fade-up" data-animate-delay="0.1">
+          <div className="text-left mb-12" data-animate="fade-up" data-animate-delay="0.1">
             <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium mb-4 rounded">
               LEADERSHIP & STAFF
             </div>
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
+            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-2">
               Civil Leadership & Core Site Team
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+            <div className="w-16 h-1 bg-primary rounded mb-4" />
+            <p className="text-muted-foreground max-w-2xl text-left">
               Photo placeholders below will be replaced with official portraits once the final image assets are shared.
             </p>
           </div>
 
-          <div
-            className="grid grid-cols-1 md:grid-cols-2 gap-8"
-            data-animate="fade-up"
-            data-animate-delay="0.2"
-            data-animate-targets="[data-civil-team]"
-            data-animate-stagger="0.08"
-          >
-            {team.map((member) => (
-              <div key={member.name} className="bg-card border border-border rounded-2xl p-8" data-civil-team>
-                {member.photo ? (
+          <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-8 items-start">
+            {leadMember ? (
+              <div
+                className="bg-card border border-border rounded-2xl p-10"
+                data-animate="fade-up"
+                data-animate-delay="0.2"
+              >
+                {leadMember.photo ? (
                   <img
-                    src={member.photo}
-                    alt={member.name}
+                    src={leadMember.photo}
+                    alt={leadMember.name}
                     className="aspect-[4/3] w-full rounded-xl object-cover mb-6"
                     loading="lazy"
                   />
                 ) : (
                   <div className="aspect-[4/3] rounded-xl bg-muted flex items-center justify-center text-center text-sm text-muted-foreground mb-6">
-                    <span>Photo placeholder for {member.name}</span>
+                    <span>Photo placeholder for {leadMember.name}</span>
                   </div>
                 )}
-                <h3 className="text-2xl font-semibold text-foreground">{member.name}</h3>
-                <p className="text-primary font-medium mb-3">{member.role}</p>
-                <p className="text-muted-foreground leading-relaxed">{member.focus}</p>
+                <p className="text-sm font-semibold text-secondary mb-2">Civil Leadership</p>
+                <h3 className="text-3xl font-semibold text-foreground">{leadMember.name}</h3>
+                <p className="text-primary font-medium mb-4">{leadMember.role}</p>
+                <p className="text-muted-foreground leading-relaxed">{leadMember.focus}</p>
               </div>
-            ))}
+            ) : null}
+
+            <div
+              className="grid grid-cols-1 gap-6"
+              data-animate="fade-up"
+              data-animate-delay="0.25"
+              data-animate-targets="[data-civil-team]"
+              data-animate-stagger="0.08"
+            >
+              {subMembers.map((member) => (
+                <div key={member.name} className="bg-card border border-border rounded-xl p-6" data-civil-team>
+                  <div className="flex items-center gap-4">
+                    {member.photo ? (
+                      <img
+                        src={member.photo}
+                        alt={member.name}
+                        className="h-16 w-16 rounded-lg object-cover"
+                        loading="lazy"
+                      />
+                    ) : (
+                      <div className="h-16 w-16 rounded-lg bg-muted flex items-center justify-center text-[10px] text-muted-foreground text-center px-2">
+                        Photo
+                      </div>
+                    )}
+                    <div>
+                      <h4 className="text-lg font-semibold text-foreground">{member.name}</h4>
+                      <p className="text-sm text-primary font-medium">{member.role}</p>
+                    </div>
+                  </div>
+                  <p className="text-sm text-muted-foreground mt-3">{member.focus}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -458,7 +564,7 @@ const CivilWorkPage = () => {
             </div>
             <div className="flex gap-4">
               <Button asChild size="lg" variant="outline" className="border-secondary-foreground text-secondary-foreground hover:bg-secondary-foreground hover:text-secondary">
-                <a href="tel:+918855860707">
+                <a href="tel:+919607140999">
                   <Phone className="mr-2 h-5 w-5" />
                   Call Now
                 </a>
