@@ -36,18 +36,20 @@ const About = () => {
   return (
     <Layout>
       <section
-        className="bg-muted/20 py-16 border-b border-border"
+        className="py-8 border-b border-border"
+        style={{ background: '#F0E9E0' }}
         data-animate="fade-up"
         data-animate-duration="1"
         data-animate-delay="0.1"
       >
-        <div className="container text-center max-w-3xl mx-auto space-y-6">
+        <div className="container max-w-3xl mx-auto space-y-6 text-left">
           <div className="inline-block bg-secondary text-secondary-foreground px-4 py-1 text-sm font-medium rounded">
             OUR STORY
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground">
+          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-2">
             The Pillars Behind Valor Buildcon
           </h1>
+          <div className="w-16 h-1 bg-primary rounded mb-4" />
           <p className="text-muted-foreground text-lg">
             Three visionaries drive our commitment to structural integrity, disciplined execution,
             and client-first collaboration. Together, they ensure every Valor Buildcon project stands as a
@@ -131,7 +133,7 @@ const About = () => {
           >
             <iframe
               title="Valor Buildcon HQ Map"
-              src="https://www.google.com/maps?q=18.619755,73.730238&z=17&output=embed"
+              src="https://www.google.com/maps?output=embed&q=JPCJ%2B323%2C%20Kate%20Wasti%2C%20Punawale%2C%20Pimpri-Chinchwad%2C%20Dattwadi%2C%20Maharashtra%20411033"
               className="w-full h-[320px] md:h-[420px]"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
