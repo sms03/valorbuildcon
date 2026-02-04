@@ -124,6 +124,21 @@ const CivilWorkPage = () => {
     "/images/civil_rcc_work/WhatsApp Image 2026-01-17 at 9.37.56 AM (2).jpeg",
     "/images/civil_rcc_work/WhatsApp Image 2026-01-17 at 9.37.56 AM (3).jpeg",
     "/images/civil_rcc_work/WhatsApp Image 2026-01-17 at 9.37.56 AM.jpeg",
+    "/images/civil_rcc_work/DSC00948.JPG",
+    "/images/civil_rcc_work/DSC00998.JPG",
+    "/images/civil_rcc_work/DSC01007.JPG",
+    "/images/civil_rcc_work/DSC01012.JPG",
+    "/images/civil_rcc_work/DSC01025.JPG",
+    "/images/civil_rcc_work/DSC01066.JPG",
+    "/images/civil_rcc_work/DSC01067.JPG",
+    "/images/civil_rcc_work/DSC01070.JPG",
+    "/images/civil_rcc_work/DSC01071.JPG",
+    "/images/civil_rcc_work/DSC01072.JPG",
+    "/images/civil_rcc_work/DSC01079.JPG",
+    "/images/civil_rcc_work/DSC01083.JPG",
+    "/images/civil_rcc_work/DSC01084.JPG",
+    "/images/civil_rcc_work/DSC01090.JPG",
+    "/images/civil_rcc_work/DSC01093.JPG",
   ];
 
   const civilTeam = [
