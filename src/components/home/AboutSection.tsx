@@ -23,9 +23,9 @@ const AboutSection = () => {
   ];
 
   const certificates = [
-    { name: "QT", file: "/certificates/000_QT.pdf" },
-    { name: "Employee Compensation Quote", file: "/certificates/Employee_Compensation_Quote.pdf" },
-    { name: "MSME Certificate Detailed", file: "/certificates/MSME%20Certificate-Detailed.pdf" },
+    { name: "QT", file: "/certificates/000_QT.pdf#toolbar=0&navpanes=0&scrollbar=0" },
+    { name: "Employee Compensation Quote", file: "/certificates/Employee_Compensation_Quote.pdf#toolbar=0&navpanes=0&scrollbar=0" },
+    { name: "MSME Certificate Detailed", file: "/certificates/MSME%20Certificate-Detailed.pdf#toolbar=0&navpanes=0&scrollbar=0" },
   ];
 
   const values = [
@@ -78,7 +78,7 @@ const AboutSection = () => {
 
             <div className="space-y-3">
               {[
-                "Certificates available for download",
+                "Certificates available for viewing",
                 "RCC + RMC delivery across Pune Metropolitan Region",
                 "5+ completed and upcoming scopes with rigorous QA/QC routines",
                 `Trusted by ${partnerCompanies.slice(0, 5).join(", ")}, and more regional developers`,
@@ -112,7 +112,7 @@ const AboutSection = () => {
           <div className="flex items-center justify-between gap-4 flex-wrap">
             <div>
               <h3 className="text-xl sm:text-2xl font-semibold text-foreground">Certificates</h3>
-              <p className="text-muted-foreground">Download our available certifications and documentation.</p>
+              <p className="text-muted-foreground">View our available certifications and documentation.</p>
             </div>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mt-6">
@@ -121,7 +121,7 @@ const AboutSection = () => {
                 key={certificate.name}
                 href={certificate.file}
                 target="_blank"
-                rel="noreferrer"
+                rel="noreferrer noopener"
                 className="group bg-card border border-border p-5 rounded-lg transition hover:border-primary/50"
                 data-animate="fade-up"
                 data-animate-delay={`${0.25 + index * 0.05}`}
@@ -134,7 +134,7 @@ const AboutSection = () => {
                     <div className="text-base font-semibold text-foreground group-hover:text-primary">
                       {certificate.name}
                     </div>
-                    <div className="text-sm text-muted-foreground">Open PDF</div>
+                    <div className="text-sm text-muted-foreground">View certificate</div>
                   </div>
                 </div>
               </a>
