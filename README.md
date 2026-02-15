@@ -26,3 +26,19 @@ Modern marketing site for Valor Buildcon LLP showcasing RCC work, RMC plant capa
 │   └── App.tsx            # Router + layout wiring
 └── vite.config.ts         # Vite + TS path aliases
 ```
+
+## 🔐 CMS Authentication (Vercel)
+Decap CMS uses GitHub OAuth via Vercel serverless functions in `api/`.
+
+### 1) Create a GitHub OAuth App
+- Homepage URL: your site domain (e.g. https://valorbuildconllp.in)
+- Authorization callback URL: https://your-domain.com/api/callback?provider=github
+
+### 2) Configure Vercel Environment Variables
+- `GITHUB_OAUTH_ID` = OAuth App Client ID
+- `GITHUB_OAUTH_SECRET` = OAuth App Client Secret
+- `CMS_REPO_PRIVATE` = `1` if the repo is private (optional)
+- `CMS_AUTH_ORIGIN` = https://your-domain.com (optional, locks popup origin)
+
+### 3) Ensure CMS config uses the correct domain
+Update `base_url` in [public/admin/config.yml](public/admin/config.yml) to match your deployed domain.
